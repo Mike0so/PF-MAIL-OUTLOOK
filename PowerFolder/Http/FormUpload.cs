@@ -30,7 +30,7 @@ namespace PowerFolder.Http
                 throw new NullReferenceException("request is not a http request");
             }
 
-            int _timeout = 18000;
+            const int _timeout = 18000;
             string _credentials = "Basic " + Convert.ToBase64String(
                 Encoding.UTF8.GetBytes(
                 string.Format("{0}:{1}",
