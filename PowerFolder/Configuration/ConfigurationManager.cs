@@ -89,7 +89,7 @@ namespace PowerFolder.Configuration
 
         private string GetConfigurationPath()
         {
-            string _path = string.Format("{0}\\PowerFolder\\Outlook",
+            string _path = string.Format("{0}\\PowerFolder\\Outlook\\",
                 Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
 
             const string _methodname = "[GetConfigurationPath]";
