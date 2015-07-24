@@ -7,12 +7,12 @@ using System.Security;
 // Attributgruppe gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die mit einer Assembly verknüpft sind.
 [assembly: AssemblyTitle("PowerFolder")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("PowerFolder integration for MS Outlook")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("dal33t GmbH")]
 [assembly: AssemblyProduct("PowerFolder")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("PowerFolder")]
 [assembly: AssemblyCulture("")]
 
 // Durch Festlegen von ComVisible auf "false" werden die Typen in dieser Assembly unsichtbar 
@@ -33,6 +33,6 @@ using System.Security;
 // Sie können alle Werte angeben oder die standardmäßigen Build- und Revisionsnummern 
 // übernehmen, indem Sie "*" eingeben:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.7.8.0")]
-[assembly: AssemblyFileVersion("0.7.8.0")]
+[assembly: AssemblyVersion("0.8.2.0")]
+[assembly: AssemblyFileVersion("0.8.2.0")]
 
