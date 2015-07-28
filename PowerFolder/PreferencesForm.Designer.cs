@@ -49,6 +49,7 @@
             this.textbox_maxDownloads = new System.Windows.Forms.TextBox();
             this.label_maxDownloads = new System.Windows.Forms.Label();
             this.checkbox_useDefaultConfig = new System.Windows.Forms.CheckBox();
+            this.version_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_header)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,6 +172,11 @@
             this.checkbox_useDefaultConfig.Name = "checkbox_useDefaultConfig";
             this.checkbox_useDefaultConfig.UseVisualStyleBackColor = true;
             // 
+            // version_lbl
+            // 
+            resources.ApplyResources(this.version_lbl, "version_lbl");
+            this.version_lbl.Name = "version_lbl";
+            // 
             // PreferencesForm
             // 
             this.AcceptButton = this.btn_ok;
@@ -178,6 +184,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btn_cancel;
+            this.Controls.Add(this.version_lbl);
             this.Controls.Add(this.checkbox_useDefaultConfig);
             this.Controls.Add(this.label_validTill2);
             this.Controls.Add(this.textbox_validTill);
@@ -231,5 +238,6 @@
         private System.Windows.Forms.TextBox textbox_maxDownloads;
         private System.Windows.Forms.Label label_maxDownloads;
         private System.Windows.Forms.CheckBox checkbox_useDefaultConfig;
+        private System.Windows.Forms.Label version_lbl;
     }
 }

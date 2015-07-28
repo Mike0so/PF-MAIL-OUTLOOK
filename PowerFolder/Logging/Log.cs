@@ -1037,7 +1037,7 @@ namespace PowerFolder.Logging
             Log.LogQuotaFormat = elogquotaformat.kbytes;
             Log.LogSizeMax = 1024;
             Log.LogPeriod = elogperiod.month;
-            Log.LogName = Configuration.ConfigurationManager.GetInstance().GetConfig().Username;
+            Log.LogName = "Outlook User";
             Log.LogNameFormat = elognameformat.date_name;
         }
 

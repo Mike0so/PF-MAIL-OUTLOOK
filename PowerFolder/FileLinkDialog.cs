@@ -28,8 +28,8 @@ namespace PowerFolder
         {
             InitializeComponent();
 
-                label_password.Visible = true;
-                textbox_password.Visible = true;
+            label_password.Visible = true;
+            textbox_password.Visible = true;
 
             linkParams = new Dictionary<string, string>();
         }

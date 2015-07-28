@@ -21,7 +21,6 @@ namespace PowerFolder.Configuration
 
         private ConfigurationManager()
         {
-            _security = new Security.SecurityManager();
         }
 
         public Configuration GetConfig()
@@ -36,6 +35,7 @@ namespace PowerFolder.Configuration
                 JsonSerializer serializer = new JsonSerializer();
                 Configuration deSerializedConfig = JsonConvert.DeserializeObject<Configuration>(reader.ReadToEnd());
                 _config = deSerializedConfig;
+                reader.Close();
                 return _config;
             }
         }
@@ -51,12 +51,14 @@ namespace PowerFolder.Configuration
         {
             Configuration config = null;
             const string _methodname = "[InstallConfiguration]";
-
+            string _fileContent = string.Empty;
             try
             {
                 using (StreamReader reader = new StreamReader(GetConfigurationPath()))
                 {
-                    string _fileContent = reader.ReadToEnd();
+                    _fileContent = reader.ReadToEnd();
+                    reader.Close();
+                }
 
                     if (string.IsNullOrEmpty(_fileContent))
                     {
@@ -75,7 +77,6 @@ namespace PowerFolder.Configuration
                     {
                         return;
                     }
-                }
                 File.WriteAllText(GetConfigurationPath(), JsonConvert.SerializeObject(config));
                 Log.LogThis("Successfuly installed the configuration.", eloglevel.info);
             }
@@ -113,7 +114,7 @@ namespace PowerFolder.Configuration
             {
                 try
                 {
-                    File.Create(_path);
+                    File.Create(_path).Close();
                 }
                 catch (Exception e)
                 {

@@ -52,7 +52,7 @@
 	<summary>
 		<codepage>1252</codepage>
 		<title>Installation Database</title>
-		<subject/>
+		<subject></subject>
 		<author>##ID_STRING2##</author>
 		<keywords>Installer,MSI,Database</keywords>
 		<comments>Contact:  Your local administrator</comments>
@@ -225,6 +225,7 @@
 	<table name="AppSearch">
 		<col key="yes" def="s72">Property</col>
 		<col key="yes" def="s72">Signature_</col>
+		<row><td>DOTNETVERSION45FULL</td><td>DotNet45Full</td></row>
 	</table>
 
 	<table name="BBControl">
@@ -251,6 +252,7 @@
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
 		<row><td>ISExpHlp.dll</td><td/><td>&lt;ISRedistPlatformDependentFolder&gt;\ISExpHlp.dll</td></row>
+		<row><td>ISSELFREG.DLL</td><td/><td>&lt;ISRedistPlatformDependentFolder&gt;\isregsvr.dll</td></row>
 		<row><td>NewBinary1</td><td/><td>&lt;ISProductFolder&gt;\Support\Themes\InstallShield Blue Theme\banner.jpg</td></row>
 		<row><td>NewBinary10</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\CompleteSetupIco.ibd</td></row>
 		<row><td>NewBinary11</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\CustomSetupIco.ibd</td></row>
@@ -338,6 +340,9 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
+		<row><td>ISX_DEFAULTCOMPONENT</td><td>{10F2E2A7-A0A2-4E18-A11C-AB81EA709D2B}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PowerFolder.Lokalisierte_Ressourcen</td><td>{568FC5F3-26CC-4651-887A-1981DC253907}</td><td>INSTALLDIR</td><td>2</td><td/><td>powerfolder.lokalisierte_res</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PowerFolder.Prim_re_Ausgabe</td><td>{DB41E657-264D-48A9-A81C-92476D700820}</td><td>INSTALLDIR</td><td>2</td><td/><td>powerfolder.prim_re_ausgabe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1058,7 +1063,11 @@
 		<row><td>ISPreventDowngrade</td><td>19</td><td/><td>[IS_PREVENT_DOWNGRADE_EXIT]</td><td/><td>Exits install when a newer version of this product is found</td></row>
 		<row><td>ISPrint</td><td>1</td><td>SetAllUsers.dll</td><td>PrintScrollableText</td><td/><td>Prints the contents of a ScrollableText control on a dialog.</td></row>
 		<row><td>ISRunSetupTypeAddLocalEvent</td><td>1</td><td>ISExpHlp.dll</td><td>RunSetupTypeAddLocalEvent</td><td/><td>Run the AddLocal events associated with the Next button on the Setup Type dialog.</td></row>
+		<row><td>ISSelfRegisterCosting</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterCosting</td><td/><td/></row>
+		<row><td>ISSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFiles</td><td/><td/></row>
+		<row><td>ISSelfRegisterFinalize</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFinalize</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>257</td><td>SetAllUsers.dll</td><td>SetAllUsers</td><td/><td/></row>
+		<row><td>ISUnSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISUnSelfRegisterFiles</td><td/><td/></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%SystemRoot]\Profiles\All Users</td><td/><td/></row>
 		<row><td>ShowMsiLog</td><td>226</td><td>SystemFolder</td><td>[SystemFolder]notepad.exe "[MsiLogFileLocation]"</td><td/><td>Shows Property-driven MSI Log</td></row>
@@ -1854,6 +1863,9 @@
 	<table name="FeatureComponents">
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
+		<row><td>AlwaysInstall</td><td>PowerFolder.Lokalisierte_Ressourcen</td></row>
+		<row><td>AlwaysInstall</td><td>PowerFolder.Prim_re_Ausgabe</td></row>
 	</table>
 
 	<table name="File">
@@ -1868,6 +1880,10 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
+		<row><td>powerfolder.dll.manifest</td><td>ISX_DEFAULTCOMPONENT</td><td>POWERF~1.MAN|PowerFolder.dll.manifest</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Arbeit\Projekte\C-Sharp\PowerFolder_Mail\PowerFolder\bin\Release\PowerFolder.dll.manifest</td><td>1</td><td/></row>
+		<row><td>powerfolder.lokalisierte_res</td><td>PowerFolder.Lokalisierte_Ressourcen</td><td>PowerFolder.Lokalisierte Ressourcen</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PowerFolder&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
+		<row><td>powerfolder.prim_re_ausgabe</td><td>PowerFolder.Prim_re_Ausgabe</td><td>PowerFolder.Primäre Ausgabe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PowerFolder&gt;|Built</td><td>3</td><td/></row>
+		<row><td>powerfolder.vsto</td><td>ISX_DEFAULTCOMPONENT</td><td>POWERF~1.VST|PowerFolder.vsto</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Arbeit\Projekte\C-Sharp\PowerFolder_Mail\PowerFolder\bin\Release\PowerFolder.vsto</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2009,6 +2025,9 @@
 		<col def="S0">FTPLocation</col>
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
+		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_517B22BB_1102_47F1_A694_67F5C416D0EC_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PowerFolder.Lokalisierte_Ressourcen</td><td/><td/><td>_C991653C_0B3C_4297_8172_5FB89E70F184_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PowerFolder.Prim_re_Ausgabe</td><td/><td/><td>_9279497C_1B05_41B7_BE65_716254AF3445_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -2314,6 +2333,7 @@
 		<row><td>ISProductFolder</td><td/><td/><td>1</td></row>
 		<row><td>ISProjectDataFolder</td><td/><td/><td>1</td></row>
 		<row><td>ISProjectFolder</td><td/><td/><td>1</td></row>
+		<row><td>PowerFolder</td><td>PowerFolder\PowerFolder.csproj</td><td/><td>2</td></row>
 		<row><td>ProgramFilesFolder</td><td/><td/><td>1</td></row>
 		<row><td>SystemFolder</td><td/><td/><td>1</td></row>
 		<row><td>WindowsFolder</td><td/><td/><td>1</td></row>
@@ -2628,6 +2648,7 @@
 		<row><td>COMPANY_NAME</td><td>1033</td><td>PowerFolder</td><td>0</td><td/><td>1000576685</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>1000576685</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>1000576685</td></row>
+		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION45FULL</td><td>1033</td><td>Microsoft .NET Framework 4.5 Full package or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>-475841655</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_OS</td><td>1033</td><td>The operating system is not adequate for running [ProductName].</td><td>0</td><td/><td>1000576685</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>1000576685</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>1000576685</td></row>
@@ -3878,7 +3899,11 @@
 		<row><td>FindRelatedProducts</td><td>NOT ISSETUPDRIVEN</td><td>420</td><td>FindRelatedProducts</td><td/></row>
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
 		<row><td>ISRunSetupTypeAddLocalEvent</td><td>Not Installed And Not ISRUNSETUPTYPEADDLOCALEVENT</td><td>1050</td><td>ISRunSetupTypeAddLocalEvent</td><td/></row>
+		<row><td>ISSelfRegisterCosting</td><td/><td>2201</td><td/><td/></row>
+		<row><td>ISSelfRegisterFiles</td><td/><td>5601</td><td/><td/></row>
+		<row><td>ISSelfRegisterFinalize</td><td/><td>6601</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>Not Installed</td><td>10</td><td/><td/></row>
+		<row><td>ISUnSelfRegisterFiles</td><td/><td>2202</td><td/><td/></row>
 		<row><td>InstallFiles</td><td/><td>4000</td><td>InstallFiles</td><td/></row>
 		<row><td>InstallFinalize</td><td/><td>6600</td><td>InstallFinalize</td><td/></row>
 		<row><td>InstallInitialize</td><td/><td>1501</td><td>InstallInitialize</td><td/></row>
@@ -3965,7 +3990,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{5A424C32-8ED7-4363-AC71-80F1E61260DA}</td></row>
 		<row><td>ISUSSignature</td><td>{43E51E04-77E9-4C38-A879-B46406F49D73}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewRealSetupDesign,viewSetupDesign,viewSetupTypes,viewUpgradePaths,viewUpdateService</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewRealSetupDesign,viewSetupDesign,viewSetupTypes,viewUpgradePaths,viewUpdateService,viewISToday,viewAppFiles,viewObjects,viewFeatureFiles,viewDependencies,viewRegistry,viewFileExtensions,viewIniFiles,viewEnvironmentVariables,viewServices,viewUI,viewTextMessages,viewSystemSearch,viewCustomActions,viewRelease</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>
@@ -4024,6 +4049,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 	<table name="LaunchCondition">
 		<col key="yes" def="s255">Condition</col>
 		<col def="l255">Description</col>
+		<row><td>DOTNETVERSION45FULL&gt;="#1"</td><td>##IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION45FULL##</td></row>
 	</table>
 
 	<table name="ListBox">
@@ -4340,9 +4366,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{72916ABD-EFC6-416C-8FBB-0241FE8FD0C9}</td><td/></row>
+		<row><td>ProductCode</td><td>{358BAC63-84F7-4550-A5AB-ADA47306C1A3}</td><td/></row>
 		<row><td>ProductName</td><td>Powerfolder</td><td/></row>
-		<row><td>ProductVersion</td><td>0.7.8.0</td><td/></row>
+		<row><td>ProductVersion</td><td>0.8.4.0</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4354,7 +4380,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>RestartManagerOption</td><td>CloseRestart</td><td/></row>
 		<row><td>SERIALNUMBER</td><td/><td/></row>
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;DOTNETVERSION45FULL</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
 		<row><td>UpgradeCode</td><td>{19D23C4D-1406-4C84-899B-638EFEBA3F69}</td><td/></row>
@@ -4399,6 +4425,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s255">Key</col>
 		<col def="S255">Name</col>
 		<col def="I2">Type</col>
+		<row><td>DotNet45Full</td><td>2</td><td>SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full</td><td>Version</td><td>2</td></row>
 	</table>
 
 	<table name="Registry">
@@ -4409,6 +4436,12 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S0">Value</col>
 		<col def="s72">Component_</col>
 		<col def="I4">ISAttributes</col>
+		<row><td>Registry1</td><td>1</td><td>Software\Microsoft\Office\Outlook\Addins\PowerFolder</td><td>Description</td><td>PowerFolder integration for 'Microsoft Outlook'</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry2</td><td>1</td><td>Software\Microsoft\Office\15.0\Outlook\Preferences</td><td>MaximumAttachmentSize</td><td>#x0</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry3</td><td>1</td><td>Software\Microsoft\Office\14.0\Outlook\Preferences</td><td>MaximumAttachmentSize</td><td>#x0</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry5</td><td>1</td><td>Software\Microsoft\Office\Outlook\Addins\PowerFolder</td><td>FriendlyName</td><td>PowerFolder Outlook Add-In</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry7</td><td>1</td><td>Software\Microsoft\Office\Outlook\Addins\PowerFolder</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry8</td><td>1</td><td>Software\Microsoft\Office\Outlook\Addins\PowerFolder</td><td>Manifest</td><td>file:///[INSTALLDIR]PowerFolder.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
 	</table>
 
 	<table name="RemoveFile">
@@ -4624,7 +4657,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
-		<row><td>{19D23C4D-1406-4C84-899B-638EFEBA3F69}</td><td></td><td>0.7.8.0</td><td></td><td>768</td><td/><td>ISACTIONPROP1</td><td>PFDoUpgrade</td></row>
+		<row><td>{19D23C4D-1406-4C84-899B-638EFEBA3F69}</td><td></td><td>0.8.4.0</td><td></td><td>768</td><td/><td>ISACTIONPROP1</td><td>PFDoUpgrade</td></row>
 	</table>
 
 	<table name="Verb">

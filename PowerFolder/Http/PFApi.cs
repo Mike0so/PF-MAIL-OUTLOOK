@@ -71,7 +71,7 @@ namespace PowerFolder.Http
 
         public PFResponse CollectAccountInfo()
         {
-            const string _methodname = "CollectAccountInfo";
+            const string _methodname = "[CollectAccountInfo]";
 
             PFResponse PFresponse = new PFResponse();
 
@@ -115,8 +115,14 @@ namespace PowerFolder.Http
             {
                 using (HttpWebResponse response = we.Response as HttpWebResponse)
                 {
-                    PFresponse.ExceptionStatus = we.Status;
-                    PFresponse.StatusCode = response.StatusCode;
+                    if (response != null)
+                    {
+                        PFresponse.ExceptionStatus = we.Status;
+                        if (response.StatusCode != null)
+                        {
+                            PFresponse.StatusCode = response.StatusCode;
+                        }
+                    }
                     Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, we.Message), eloglevel.error);
                     return PFresponse;
                 }
@@ -178,8 +184,14 @@ namespace PowerFolder.Http
             {
                 using (HttpWebResponse response = we.Response as HttpWebResponse)
                 {
-                    PFresponse.ExceptionStatus = we.Status;
-                    PFresponse.StatusCode = response.StatusCode;
+                    if (response != null)
+                    {
+                        PFresponse.ExceptionStatus = we.Status;
+                        if (response.StatusCode != null)
+                        {
+                            PFresponse.StatusCode = response.StatusCode;
+                        }
+                    }
                     Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, we.Message), eloglevel.error);
                     return PFresponse;
                 }
@@ -245,8 +257,14 @@ namespace PowerFolder.Http
             {
                 using (HttpWebResponse response = we.Response as HttpWebResponse)
                 {
-                    PFresponse.StatusCode = response.StatusCode;
-                    PFresponse.ExceptionStatus = we.Status;
+                    if (response != null)
+                    {
+                        PFresponse.ExceptionStatus = we.Status;
+                        if (response.StatusCode != null)
+                        {
+                            PFresponse.StatusCode = response.StatusCode;
+                        }
+                    }
                     Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, we.Message), eloglevel.error);
 
                     return PFresponse;
@@ -320,8 +338,14 @@ namespace PowerFolder.Http
                 {
                     if (response.StatusCode == HttpStatusCode.NotFound)
                     {
-                        PFresponse.StatusCode = response.StatusCode;
-                        PFresponse.ExceptionStatus = we.Status;
+                        if (response != null)
+                        {
+                            PFresponse.ExceptionStatus = we.Status;
+                            if (response.StatusCode != null)
+                            {
+                                PFresponse.StatusCode = response.StatusCode;
+                            }
+                        }
                         Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, we.Message), eloglevel.error);
                         return PFresponse;
                     }
@@ -399,7 +423,14 @@ namespace PowerFolder.Http
             {
                 using (HttpWebResponse response = we.Response as HttpWebResponse)
                 {
-                    PFresponse.StatusCode = response.StatusCode;
+                    if (response != null)
+                    {
+                        PFresponse.ExceptionStatus = we.Status;
+                        if (response.StatusCode != null)
+                        {
+                            PFresponse.StatusCode = response.StatusCode;
+                        }
+                    }
                     PFresponse.ExceptionStatus = we.Status;
                     Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, we.Message), eloglevel.error);
 
@@ -474,7 +505,14 @@ namespace PowerFolder.Http
             {
                 using (HttpWebResponse response = we.Response as HttpWebResponse)
                 {
-                    PFresponse.StatusCode = response.StatusCode;
+                    if (response != null)
+                    {
+                        PFresponse.ExceptionStatus = we.Status;
+                        if (response.StatusCode != null)
+                        {
+                            PFresponse.StatusCode = response.StatusCode;
+                        }
+                    }
                     PFresponse.ExceptionStatus = we.Status;
                     Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, we.Message), eloglevel.error);
 
@@ -585,7 +623,10 @@ namespace PowerFolder.Http
                 {
                     if (response != null)
                     {
-                        PFresponse.StatusCode = response.StatusCode;
+                        if (response.StatusCode != null)
+                        {
+                            PFresponse.StatusCode = response.StatusCode;
+                        }
                         PFresponse.ExceptionStatus = we.Status;
                         Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, we.Message), eloglevel.error);
 
@@ -651,8 +692,14 @@ namespace PowerFolder.Http
             {
                 using (HttpWebResponse response = we.Response as HttpWebResponse)
                 {
-                    PFresponse.StatusCode = response.StatusCode;
-                    PFresponse.ExceptionStatus = we.Status;
+                    if (response != null)
+                    {
+                        PFresponse.ExceptionStatus = we.Status;
+                        if (response.StatusCode != null)
+                        {
+                            PFresponse.StatusCode = response.StatusCode;
+                        }
+                    }
                     Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, we.Message), eloglevel.error);
 
                     return PFresponse;

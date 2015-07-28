@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerFolder", "PowerFolder\PowerFolder.csproj", "{DA1F3C00-D822-4106-B185-A072FC9B74D6}"
 EndProject
 Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "Powerfolder-Installer", "Powerfolder-Installer\Powerfolder-Installer.isproj", "{A59A8342-9C1E-4046-9067-896D13A819C7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DA1F3C00-D822-4106-B185-A072FC9B74D6} = {DA1F3C00-D822-4106-B185-A072FC9B74D6}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

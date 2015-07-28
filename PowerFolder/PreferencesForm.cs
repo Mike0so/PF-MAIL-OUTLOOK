@@ -24,6 +24,8 @@ namespace PowerFolder
 
             combobox_server_prefix.Items.Add("http://");
             combobox_server_prefix.Items.Add("https://");
+
+            version_lbl.Text = string.Format("Current Version : {0}", System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString().Substring(0, 5));
         }
 
         public static PreferencesForm GetInstance()

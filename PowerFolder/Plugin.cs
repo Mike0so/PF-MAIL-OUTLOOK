@@ -71,7 +71,6 @@ namespace PowerFolder
 
             if (OutlookMailItem.Attachments.Count == 0)
             {
-                Cancel = true;
                 return;
             }
 
@@ -83,8 +82,23 @@ namespace PowerFolder
 
             OutlookMailItem.SaveAs(Path.GetTempPath() + "\\template1.oft", OlSaveAsType.olTemplate);
 
-            /* Use Default values if they are set */
-            if (FileLinkDialog.GetInstance().linkParams.Count > 0)
+            if (Config.GetInstance().GetConfig().FileLinkDialogEachEmail)
+            {
+                FileLinkDialog.GetInstance().ConfigurePasswordControls();
+                if (FileLinkDialog.GetInstance().ShowDialog() == DialogResult.OK)
+                {
+                    Dictionary<string, string> cache = ConvertToCache(FileLinkDialog.GetInstance().linkParams);
+
+                    Thread thread = new Thread(() => ItemSend_Thread(cache));
+                    Logger.LogThis(string.Format("{0} {1} [Staring ItemSend_Thread to generate the PowerFolder Email]",
+                        _classname, _methodname), Logging.eloglevel.info);
+
+                    thread.Start();
+                    FileLinkDialog.GetInstance().linkParams = new Dictionary<string, string>();
+
+                }
+            }
+            else if (FileLinkDialog.GetInstance().linkParams.Count > 0)
             {
                 Dictionary<string, string> cache = ConvertToCache(FileLinkDialog.GetInstance().linkParams);
 

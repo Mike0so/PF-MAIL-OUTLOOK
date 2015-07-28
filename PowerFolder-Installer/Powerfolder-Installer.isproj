@@ -28,4 +28,10 @@
 		</TaggedOutputs> -->
 	</ItemGroup>
 	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2013Limited\InstallShield.targets"/>
+	<ItemGroup>
+		<ProjectReference Include="..\PowerFolder\PowerFolder.csproj">
+			<Name>PowerFolder</Name>
+			<Project>{DA1F3C00-D822-4106-B185-A072FC9B74D6}</Project>
+		</ProjectReference>
+	</ItemGroup>
 </Project>
