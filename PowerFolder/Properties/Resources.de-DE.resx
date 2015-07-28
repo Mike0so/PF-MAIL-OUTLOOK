@@ -117,82 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ribbonDialogLauncherImpl1.ScreenTip" xml:space="preserve">
-    <value>File Link Configuration</value>
+  <data name="application_title" xml:space="preserve">
+    <value>PowerFolder Outlook Add-In</value>
   </data>
-  <data name="&gt;&gt;tab_group.Parent" xml:space="preserve">
-    <value>sendTab</value>
+  <data name="config_credentials_empty" xml:space="preserve">
+    <value>Bitte geben Sie Ihre Benutzerdaten ein um die Einstellungen zu speichern.</value>
   </data>
-  <data name="checkBox1.Label" xml:space="preserve">
-    <value>Show File Link configuration on sending</value>
+  <data name="config_empty" xml:space="preserve">
+    <value>Ihre Einstellungen sind leer. Bitte geben Sie mindestens Ihren Server und Ihre Benutzerdaten ein.</value>
   </data>
-  <data name="&gt;&gt;RibbonSend.OfficeMenu.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="config_password_recovery" xml:space="preserve">
+    <value>Bitte geben Sie Ihren Benutzernamen und Server ein um die Passwort wiederherstellung zu nutzen.</value>
   </data>
-  <data name="&gt;&gt;sendTab.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.TabView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="filelink_error_maxDownload" xml:space="preserve">
+    <value>Bitte geben Sie eine Zahl an um die Download-Begrenzung der/des FileLinks festzulegen.</value>
   </data>
-  <data name="&gt;&gt;stop_track_checkbox.Parent" xml:space="preserve">
-    <value>tab_group</value>
+  <data name="filelink_error_validity" xml:space="preserve">
+    <value>Bitte geben Sie eine Zahl an um die Gültigkeit der/des FileLinks festzulegen.</value>
   </data>
-  <data name="stop_track_checkbox.Label" xml:space="preserve">
-    <value>Upload attachments to PowerFolder</value>
+  <data name="http_connect_failure" xml:space="preserve">
+    <value>Es war nicht möglich sich mit dem angegebenen Server zu verbinden.</value>
   </data>
-  <data name="&gt;&gt;tab_group.Name" xml:space="preserve">
-    <value>tab_group</value>
+  <data name="http_timeout" xml:space="preserve">
+    <value>Es war nicht möglich eine Verbindung mit dem Server aufzubauen.</value>
   </data>
-  <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
-    <value>checkBox1</value>
+  <data name="http_unauthorized" xml:space="preserve">
+    <value>Es war nicht möglich den Benutzer zu authentifizieren.\r\nBitte überprüfen sie Ihre Benutzerdaten.</value>
   </data>
-  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.CheckBoxView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mail_quota_exceeded" xml:space="preserve">
+    <value>Es war nicht möglich die E-Mail zu versenden, da Sie nicht mehr genug Speicher auf Ihrem Account zu verfügung haben.</value>
   </data>
-  <data name="&gt;&gt;RibbonSend.OfficeMenu.Name" xml:space="preserve">
-    <value>RibbonSend.OfficeMenu</value>
+  <data name="update_new_version" xml:space="preserve">
+    <value>Eine neue Version ist verfügbar.\r\nMöchten Sie diese nun herunterladen?</value>
   </data>
-  <data name="&gt;&gt;tab_group.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;stop_track_checkbox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;RibbonSend.OfficeMenu.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.OfficeMenuView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;tab_group.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;sendTab.Name" xml:space="preserve">
-    <value>sendTab</value>
-  </data>
-  <data name="&gt;&gt;RibbonSend.OfficeMenu.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="sendTab.Label" xml:space="preserve">
-    <value>TabNewMailMessage</value>
-  </data>
-  <data name="&gt;&gt;stop_track_checkbox.Name" xml:space="preserve">
-    <value>stop_track_checkbox</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Parent" xml:space="preserve">
-    <value>tab_group</value>
-  </data>
-  <data name="ribbonDialogLauncherImpl1.SuperTip" xml:space="preserve">
-    <value>Show the "File Link Configuration" to add additional options to a File Link</value>
-  </data>
-  <data name="tab_group.Label" xml:space="preserve">
-    <value>PowerFolder</value>
-  </data>
-  <data name="&gt;&gt;stop_track_checkbox.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.CheckBoxView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>de-DE</value>
-  </metadata>
 </root>

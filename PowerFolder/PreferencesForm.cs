@@ -140,7 +140,7 @@ namespace PowerFolder
             if (!apiCall.CanAuthenticate())
             {
                 HandleProgressBar(false);
-                MessageBox.Show(Properties.Resources.config_unvalid_credentials, Properties.Resources.application_title);
+                MessageBox.Show(Properties.Resources.http_unauthorized, Properties.Resources.application_title);
                 return;
             }
 
@@ -153,6 +153,13 @@ namespace PowerFolder
         {
             if(string.IsNullOrEmpty(textbox_server.Text) ||
                 string.IsNullOrEmpty(textbox_username.Text) ||
+                string.IsNullOrEmpty(textbox_password.Text))
+            {
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(textbox_server.Text) &&
+                string.IsNullOrEmpty(textbox_username.Text) &&
                 string.IsNullOrEmpty(textbox_password.Text))
             {
                 return false;

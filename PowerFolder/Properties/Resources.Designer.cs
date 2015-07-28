@@ -61,43 +61,17 @@ namespace PowerFolder.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Your server address or your credentials were not valid. Please check the preferences for wrong entrys ähnelt.
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static string api_request_auth_error {
+        internal static System.Drawing.Bitmap agt_update_misc {
             get {
-                return ResourceManager.GetString("api_request_auth_error", resourceCulture);
+                object obj = ResourceManager.GetObject("agt_update_misc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die It was not possible to connect to the selected server. Please check the preferences. ähnelt.
-        /// </summary>
-        internal static string api_request_connect_failure {
-            get {
-                return ResourceManager.GetString("api_request_connect_failure", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die An error occured while creating the file links. Would you like to sent the Email without PowerFolder? ähnelt.
-        /// </summary>
-        internal static string api_request_error {
-            get {
-                return ResourceManager.GetString("api_request_error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die The server did not answer. ähnelt.
-        /// </summary>
-        internal static string api_request_timeout {
-            get {
-                return ResourceManager.GetString("api_request_timeout", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die PowerFolder ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die PowerFolder Outlook Add-In ähnelt.
         /// </summary>
         internal static string application_title {
             get {
@@ -106,7 +80,16 @@ namespace PowerFolder.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Your configuration is empty. Please check the preferences for missing entrys. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Your did not enter your credentials.\r\n Please do that to save the preferences. ähnelt.
+        /// </summary>
+        internal static string config_credentials_empty {
+            get {
+                return ResourceManager.GetString("config_credentials_empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Your preferences are empty. Please enter your credentials and server address. ähnelt.
         /// </summary>
         internal static string config_empty {
             get {
@@ -124,15 +107,6 @@ namespace PowerFolder.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die The password and / or the username were not valid. ähnelt.
-        /// </summary>
-        internal static string config_unvalid_credentials {
-            get {
-                return ResourceManager.GetString("config_unvalid_credentials", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap dialogImage {
@@ -143,11 +117,47 @@ namespace PowerFolder.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die If your using the password protection you need to enter a password. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please enter a number for the maximum download count of the file link. ähnelt.
         /// </summary>
-        internal static string fileLink_dialog_no_password {
+        internal static string filelink_error_maxDownload {
             get {
-                return ResourceManager.GetString("fileLink_dialog_no_password", resourceCulture);
+                return ResourceManager.GetString("filelink_error_maxDownload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please enter a number for the validity of the file link. ähnelt.
+        /// </summary>
+        internal static string filelink_error_validity {
+            get {
+                return ResourceManager.GetString("filelink_error_validity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die It was not possible to connect to the selected server. ähnelt.
+        /// </summary>
+        internal static string http_connect_failure {
+            get {
+                return ResourceManager.GetString("http_connect_failure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die It was not possible to create a connection to the server. ähnelt.
+        /// </summary>
+        internal static string http_timeout {
+            get {
+                return ResourceManager.GetString("http_timeout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die It was not possible to authenticate the entered user.\r\n Please check your credentials. ähnelt.
+        /// </summary>
+        internal static string http_unauthorized {
+            get {
+                return ResourceManager.GetString("http_unauthorized", resourceCulture);
             }
         }
         
@@ -172,11 +182,11 @@ namespace PowerFolder.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die It was not possible to send the E-Mail due to missing quota on your PowerFolder account.\r\nWould you like to send the E-Mail without PowerFolder? ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die It was not possible to send the E-Mail due to missing quota on your account. ähnelt.
         /// </summary>
-        internal static string itemsend_not_enough_quota {
+        internal static string mail_quota_exceeded {
             get {
-                return ResourceManager.GetString("itemsend_not_enough_quota", resourceCulture);
+                return ResourceManager.GetString("mail_quota_exceeded", resourceCulture);
             }
         }
         
@@ -227,6 +237,15 @@ namespace PowerFolder.Properties {
             get {
                 object obj = ResourceManager.GetObject("preferences_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die A new version is available. Would you like to download it now? ähnelt.
+        /// </summary>
+        internal static string update_new_version {
+            get {
+                return ResourceManager.GetString("update_new_version", resourceCulture);
             }
         }
     }

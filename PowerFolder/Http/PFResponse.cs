@@ -31,10 +31,11 @@ namespace PowerFolder.Http
         /// <returns></returns>
         public static bool IsValidResponse(this PFResponse response, Microsoft.Office.Interop.Outlook.MailItem item)
         {
+            
             if (response.StatusCode == HttpStatusCode.Unauthorized ||
                 response.StatusCode == HttpStatusCode.Forbidden)
             {
-                MessageBox.Show(Properties.Resources.api_request_auth_error,
+                MessageBox.Show(Properties.Resources.http_unauthorized,
                 Properties.Resources.application_title);
                 item.Display();
                 return false;
@@ -43,7 +44,7 @@ namespace PowerFolder.Http
             {
                 if (response.ExceptionStatus == WebExceptionStatus.Timeout)
                 {
-                   MessageBox.Show(Properties.Resources.api_request_timeout,
+                   MessageBox.Show(Properties.Resources.http_timeout,
                         Properties.Resources.application_title);
                    item.Display();
                    return false;
@@ -54,14 +55,14 @@ namespace PowerFolder.Http
                     {
                         return true;
                     }
-                    MessageBox.Show(Properties.Resources.api_request_auth_error,
+                    MessageBox.Show(Properties.Resources.http_connect_failure,
                         Properties.Resources.application_title);
                     item.Display();
                     return false;
                 }
                 if (response.ExceptionStatus == WebExceptionStatus.ConnectFailure)
                 {
-                    MessageBox.Show(Properties.Resources.api_request_connect_failure,
+                    MessageBox.Show(Properties.Resources.http_connect_failure,
                         Properties.Resources.application_title);
                     item.Display();
                     return false;

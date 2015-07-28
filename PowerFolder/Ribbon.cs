@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Office.Tools.Ribbon;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace PowerFolder
 {
@@ -29,6 +30,12 @@ namespace PowerFolder
         private void btn_register_Click(object sender, RibbonControlEventArgs e)
         {
             Process.Start(Configuration.ConfigurationManager.GetInstance().GetConfig().BaseUrl + "/register");
+        }
+
+        private void update_btn_Click(object sender, RibbonControlEventArgs e)
+        {
+            Update.Updater updater = new Update.Updater(true);
+            Task result = updater.CheckVersionAsync(true);
         }
 
 

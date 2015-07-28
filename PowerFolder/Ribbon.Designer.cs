@@ -38,6 +38,7 @@
             this.mainTab = this.Factory.CreateRibbonTab();
             this.group = this.Factory.CreateRibbonGroup();
             this.button_preferences = this.Factory.CreateRibbonButton();
+            this.update_btn = this.Factory.CreateRibbonButton();
             this.button_pfmenu = this.Factory.CreateRibbonMenu();
             this.pf_btn_homepage = this.Factory.CreateRibbonButton();
             this.pf_btn_documentation = this.Factory.CreateRibbonButton();
@@ -55,6 +56,7 @@
             // group
             // 
             this.group.Items.Add(this.button_preferences);
+            this.group.Items.Add(this.update_btn);
             this.group.Items.Add(this.button_pfmenu);
             this.group.Name = "group";
             // 
@@ -66,6 +68,15 @@
             this.button_preferences.Name = "button_preferences";
             this.button_preferences.ShowImage = true;
             this.button_preferences.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button_preferences_Click);
+            // 
+            // update_btn
+            // 
+            this.update_btn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.update_btn.Image = global::PowerFolder.Properties.Resources.agt_update_misc;
+            resources.ApplyResources(this.update_btn, "update_btn");
+            this.update_btn.Name = "update_btn";
+            this.update_btn.ShowImage = true;
+            this.update_btn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.update_btn_Click);
             // 
             // button_pfmenu
             // 
@@ -120,6 +131,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton pf_btn_homepage;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton pf_btn_documentation;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_register;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton update_btn;
     }
 
     partial class ThisRibbonCollection

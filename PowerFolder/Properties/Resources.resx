@@ -120,33 +120,45 @@
   <data name="config_password_recovery" xml:space="preserve">
     <value>Please enter your username and server to use the password recovery.</value>
   </data>
+  <data name="filelink_error_validity" xml:space="preserve">
+    <value>Please enter a number for the validity of the file link.</value>
+  </data>
+  <data name="update_new_version" xml:space="preserve">
+    <value>A new version is available. Would you like to download it now?</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="PowerFolderIconLarge" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PowerFolderIconLarge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="config_credentials_empty" xml:space="preserve">
+    <value>Your did not enter your credentials.\r\n Please do that to save the preferences.</value>
+  </data>
+  <data name="dialogImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dialogImage.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pref_header" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pref_header.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="api_request_connect_failure" xml:space="preserve">
-    <value>It was not possible to connect to the selected server. Please check the preferences.</value>
+  <data name="mail_quota_exceeded" xml:space="preserve">
+    <value>It was not possible to send the E-Mail due to missing quota on your account.</value>
+  </data>
+  <data name="http_unauthorized" xml:space="preserve">
+    <value>It was not possible to authenticate the entered user.\r\n Please check your credentials.</value>
   </data>
   <data name="application_title" xml:space="preserve">
-    <value>PowerFolder</value>
+    <value>PowerFolder Outlook Add-In</value>
   </data>
   <data name="Icon48x481" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="api_request_auth_error" xml:space="preserve">
-    <value>Your server address or your credentials were not valid. Please check the preferences for wrong entrys</value>
-  </data>
-  <data name="fileLink_dialog_no_password" xml:space="preserve">
-    <value>If your using the password protection you need to enter a password.</value>
-  </data>
-  <data name="api_request_error" xml:space="preserve">
-    <value>An error occured while creating the file links. Would you like to sent the Email without PowerFolder?</value>
+  <data name="http_timeout" xml:space="preserve">
+    <value>It was not possible to create a connection to the server.</value>
   </data>
   <data name="preferences_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\preferences_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="http_connect_failure" xml:space="preserve">
+    <value>It was not possible to connect to the selected server.</value>
   </data>
   <data name="Icon48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon48x48.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,22 +166,16 @@
   <data name="PowerFolder_Software_license" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PowerFolder Software license.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="config_unvalid_credentials" xml:space="preserve">
-    <value>The password and / or the username were not valid.</value>
+  <data name="filelink_error_maxDownload" xml:space="preserve">
+    <value>Please enter a number for the maximum download count of the file link.</value>
   </data>
   <data name="PowerFolder_print_dark_2014_500px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PowerFolder_print_dark_2014_500px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="itemsend_not_enough_quota" xml:space="preserve">
-    <value>It was not possible to send the E-Mail due to missing quota on your PowerFolder account.\r\nWould you like to send the E-Mail without PowerFolder?</value>
-  </data>
   <data name="config_empty" xml:space="preserve">
-    <value>Your configuration is empty. Please check the preferences for missing entrys.</value>
+    <value>Your preferences are empty. Please enter your credentials and server address.</value>
   </data>
-  <data name="api_request_timeout" xml:space="preserve">
-    <value>The server did not answer.</value>
-  </data>
-  <data name="dialogImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dialogImage.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="agt_update_misc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\agt_update_misc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -80,7 +80,7 @@ namespace PowerFolder
                 }
                 catch (FormatException) 
                 {
-                    MessageBox.Show("Please enter a number for the validity of the file link.",
+                    MessageBox.Show(Properties.Resources.filelink_error_validity,
                         Properties.Resources.application_title);
                     
                     return;
@@ -107,7 +107,7 @@ namespace PowerFolder
                 }
                 catch (FormatException) 
                 {
-                    MessageBox.Show("Please enter a number for the maximum download count of the file link.",
+                    MessageBox.Show(Properties.Resources.filelink_error_maxDownload,
                         Properties.Resources.application_title);
                     return;
                 }

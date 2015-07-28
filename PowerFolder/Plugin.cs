@@ -16,6 +16,7 @@ using Config = PowerFolder.Configuration.ConfigurationManager;
 using PowerFolder.Http;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace PowerFolder
 {
@@ -38,6 +39,9 @@ namespace PowerFolder
             OutlookInspectors = OutlookApplication.Inspectors;
             OutlookInspectors.NewInspector += new Microsoft.Office.Interop.Outlook.InspectorsEvents_NewInspectorEventHandler(OutlookInspectors_NewInspector);
             OutlookApplication.ItemSend += new Microsoft.Office.Interop.Outlook.ApplicationEvents_11_ItemSendEventHandler(OutlookApplication_ItemSend);
+
+            Update.Updater updater = new Update.Updater();
+            Task result = updater.CheckVersionAsync(false);
         }
 
         void OutlookInspectors_NewInspector(Microsoft.Office.Interop.Outlook.Inspector Inspector)
@@ -237,8 +241,8 @@ namespace PowerFolder
 
             if (attachmentsSize > (spaceAllowed - spaceUsed))
             {
-                DialogResult dialogResult = MessageBox.Show(Properties.Resources.itemsend_not_enough_quota,
-                    Properties.Resources.application_title);
+                DialogResult dialogResult = MessageBox.Show(Properties.Resources.mail_quota_exceeded,
+                    Properties.Resources.application_title, MessageBoxButtons.YesNo);
 
                 if (dialogResult == DialogResult.Yes)
                 {

@@ -117,172 +117,262 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btn_cancel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label_maxDownloads.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 117</value>
+  <data name="textbox_password.Location" type="System.Drawing.Point, System.Drawing">
+    <value>122, 104</value>
   </data>
-  <data name="textbox_validTill.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 22</value>
+  <data name="textbox_password.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 22</value>
   </data>
-  <data name="&gt;&gt;btn_ok.Name" xml:space="preserve">
-    <value>btn_ok</value>
-  </data>
-  <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>279, 155</value>
-  </data>
-  <data name="&gt;&gt;textbox_maxDownloads.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label_validTill1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label_maxDownloads.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="textbox_password.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="textbox_password.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>447, 190</value>
+  <data name="&gt;&gt;textbox_password.Name" xml:space="preserve">
+    <value>textbox_password</value>
   </data>
-  <data name="label_password.Text" xml:space="preserve">
-    <value>Password</value>
-  </data>
-  <data name="&gt;&gt;label_maxDownloads.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FileLinkDialog</value>
-  </data>
-  <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 155</value>
-  </data>
-  <data name="&gt;&gt;btn_ok.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label_validTill1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 17</value>
-  </data>
-  <data name="label_password.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;textbox_password.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;textbox_password.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;label_password.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="&gt;&gt;textbox_password.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
-  <data name="label_validTill1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="label_password.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="label_validTill2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 117</value>
+  <data name="label_password.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 107</value>
   </data>
-  <data name="&gt;&gt;label_password.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label_password.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 17</value>
   </data>
-  <data name="&gt;&gt;label_validTill1.Name" xml:space="preserve">
-    <value>label_validTill1</value>
+  <data name="label_password.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="textbox_password.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btn_ok.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="label_password.Text" xml:space="preserve">
+    <value>Password</value>
   </data>
   <data name="label_password.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;label_maxDownloads.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;label_password.Name" xml:space="preserve">
+    <value>label_password</value>
   </data>
-  <data name="&gt;&gt;label_validTill2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_cancel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;textbox_maxDownloads.Name" xml:space="preserve">
-    <value>textbox_maxDownloads</value>
-  </data>
-  <data name="label_validTill2.Text" xml:space="preserve">
-    <value>Days.</value>
-  </data>
-  <data name="&gt;&gt;textbox_password.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="label_validTill1.Text" xml:space="preserve">
-    <value>Valid for</value>
-  </data>
-  <data name="&gt;&gt;label_validTill1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="textbox_validTill.Location" type="System.Drawing.Point, System.Drawing">
-    <value>324, 114</value>
-  </data>
-  <data name="&gt;&gt;textbox_validTill.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label_validTill1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label_maxDownloads.Type" xml:space="preserve">
+  <data name="&gt;&gt;label_password.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label_maxDownloads.Text" xml:space="preserve">
-    <value>max Downloads</value>
-  </data>
-  <data name="&gt;&gt;label_validTill1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;btn_ok.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label_password.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btn_cancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label_password.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
-  <data name="label_validTill2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 17</value>
+  <data name="label_maxDownloads.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+  <data name="label_maxDownloads.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 138</value>
   </data>
-  <data name="textbox_validTill.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="label_maxDownloads.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 17</value>
   </data>
-  <data name="&gt;&gt;label_validTill2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label_maxDownloads.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="textbox_maxDownloads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 22</value>
-  </data>
-  <data name="&gt;&gt;label_password.Name" xml:space="preserve">
-    <value>label_password</value>
+  <data name="label_maxDownloads.Text" xml:space="preserve">
+    <value>max Downloads</value>
   </data>
   <data name="&gt;&gt;label_maxDownloads.Name" xml:space="preserve">
     <value>label_maxDownloads</value>
   </data>
-  <data name="btn_ok.Text" xml:space="preserve">
-    <value>OK</value>
+  <data name="&gt;&gt;label_maxDownloads.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btn_cancel.Name" xml:space="preserve">
-    <value>btn_cancel</value>
+  <data name="&gt;&gt;label_maxDownloads.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_maxDownloads.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="textbox_maxDownloads.Location" type="System.Drawing.Point, System.Drawing">
+    <value>122, 135</value>
+  </data>
+  <data name="textbox_maxDownloads.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 22</value>
   </data>
   <data name="textbox_maxDownloads.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
+  <data name="&gt;&gt;textbox_maxDownloads.Name" xml:space="preserve">
+    <value>textbox_maxDownloads</value>
+  </data>
+  <data name="&gt;&gt;textbox_maxDownloads.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textbox_maxDownloads.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textbox_maxDownloads.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label_validTill1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_validTill1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 138</value>
+  </data>
+  <data name="label_validTill1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 17</value>
+  </data>
+  <data name="label_validTill1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label_validTill1.Text" xml:space="preserve">
+    <value>Valid for</value>
+  </data>
+  <data name="&gt;&gt;label_validTill1.Name" xml:space="preserve">
+    <value>label_validTill1</value>
+  </data>
+  <data name="&gt;&gt;label_validTill1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_validTill1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_validTill1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="textbox_validTill.Location" type="System.Drawing.Point, System.Drawing">
+    <value>325, 135</value>
+  </data>
+  <data name="textbox_validTill.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 22</value>
+  </data>
+  <data name="textbox_validTill.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;textbox_validTill.Name" xml:space="preserve">
+    <value>textbox_validTill</value>
+  </data>
+  <data name="&gt;&gt;textbox_validTill.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textbox_validTill.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textbox_validTill.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label_validTill2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_validTill2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>377, 138</value>
+  </data>
+  <data name="label_validTill2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 17</value>
+  </data>
+  <data name="label_validTill2.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="label_validTill2.Text" xml:space="preserve">
+    <value>Days.</value>
+  </data>
   <data name="&gt;&gt;label_validTill2.Name" xml:space="preserve">
     <value>label_validTill2</value>
+  </data>
+  <data name="&gt;&gt;label_validTill2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_validTill2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_validTill2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>360, 175</value>
+  </data>
+  <data name="btn_cancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btn_cancel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btn_cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;btn_cancel.Name" xml:space="preserve">
+    <value>btn_cancel</value>
+  </data>
+  <data name="&gt;&gt;btn_cancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_cancel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_cancel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
+    <value>279, 175</value>
+  </data>
+  <data name="btn_ok.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btn_ok.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btn_ok.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="&gt;&gt;btn_ok.Name" xml:space="preserve">
+    <value>btn_ok</value>
+  </data>
+  <data name="&gt;&gt;btn_ok.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_ok.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_ok.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 12</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>342, 66</value>
+  </data>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>447, 210</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -540,85 +630,13 @@
         //8AAAAAAAD//wAAAAAAAP//AAAAAAAA//8=
 </value>
   </data>
-  <data name="label_validTill2.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;btn_cancel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label_validTill2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label_password.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 17</value>
-  </data>
-  <data name="label_maxDownloads.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btn_cancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>PowerFolder</value>
   </data>
-  <data name="btn_ok.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FileLinkDialog</value>
   </data>
-  <data name="label_validTill1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 117</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label_maxDownloads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 17</value>
-  </data>
-  <data name="label_password.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btn_ok.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textbox_password.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textbox_validTill.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="textbox_maxDownloads.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 114</value>
-  </data>
-  <data name="textbox_password.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 84</value>
-  </data>
-  <data name="&gt;&gt;textbox_maxDownloads.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textbox_password.Name" xml:space="preserve">
-    <value>textbox_password</value>
-  </data>
-  <data name="&gt;&gt;textbox_validTill.Name" xml:space="preserve">
-    <value>textbox_validTill</value>
-  </data>
-  <data name="&gt;&gt;textbox_validTill.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="textbox_password.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 22</value>
-  </data>
-  <data name="label_validTill2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btn_cancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="label_password.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 87</value>
-  </data>
-  <data name="&gt;&gt;textbox_maxDownloads.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>de-DE</value>
-  </metadata>
 </root>
