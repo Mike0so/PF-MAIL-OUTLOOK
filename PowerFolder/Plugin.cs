@@ -165,7 +165,11 @@ namespace PowerFolder
             {
                 return;
             }
-
+            if (responseGetInfo.Message == null)
+            {
+                MessageBox.Show("Error", "Error");
+                newEmail.Display();
+            }
             /*if (!responseGetInfo.IsJSONResponse())
             {
                 Logger.LogThis(string.Format("{0} {1} [Exception : AccountsAPI #getInfo is not a JSON Response cant parse!]",

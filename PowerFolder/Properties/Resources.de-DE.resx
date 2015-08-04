@@ -142,12 +142,14 @@
     <value>Es war nicht möglich eine Verbindung mit dem Server aufzubauen.</value>
   </data>
   <data name="http_unauthorized" xml:space="preserve">
-    <value>Es war nicht möglich den Benutzer zu authentifizieren.\\r\\nBitte überprüfen sie Ihre Benutzerdaten oder Ihren Server.</value>
+    <value>Es war nicht möglich den Benutzer zu authentifizieren.
+Bitte überprüfen sie Ihre Benutzerdaten oder Ihren Server.</value>
   </data>
   <data name="mail_quota_exceeded" xml:space="preserve">
     <value>Es war nicht möglich die E-Mail zu versenden, da Sie nicht mehr genug Speicher auf Ihrem Account zu verfügung haben. Möchten Sie die E-Mail ohne PowerFolder versenden?</value>
   </data>
   <data name="update_new_version" xml:space="preserve">
-    <value>Eine neue Version ist verfügbar.\r\nMöchten Sie diese nun herunterladen?</value>
+    <value>Eine neue Version ist verfügbar.
+Möchten Sie diese nun herunterladen?</value>
   </data>
 </root>

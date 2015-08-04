@@ -126,13 +126,11 @@
   <data name="update_new_version" xml:space="preserve">
     <value>A new version is available. Would you like to download it now?</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PowerFolderIconLarge" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PowerFolderIconLarge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="config_credentials_empty" xml:space="preserve">
-    <value>Your did not enter your credentials.\r\n Please do that to save the preferences.</value>
+    <value>Your did not enter your credentials.
+Please do that to save the preferences.</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dialogImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dialogImage.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,8 +140,15 @@
   <data name="mail_quota_exceeded" xml:space="preserve">
     <value>It was not possible to send the E-Mail due to missing quota on your account.</value>
   </data>
+  <data name="update_up_to_date" xml:space="preserve">
+    <value>Powerfolder is up to date.</value>
+  </data>
   <data name="http_unauthorized" xml:space="preserve">
-    <value>It was not possible to authenticate the entered user.\r\n Please check your credentials.</value>
+    <value>It was not possible to authenticate the entered user.
+Please check your credentials.</value>
+  </data>
+  <data name="SettingsIconsOutlook" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Settings-icons-outlook.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="application_title" xml:space="preserve">
     <value>PowerFolder Outlook Add-In</value>
@@ -151,17 +156,17 @@
   <data name="Icon48x481" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="updateIconOutlook" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\update-icon-outlook.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="http_timeout" xml:space="preserve">
     <value>It was not possible to create a connection to the server.</value>
-  </data>
-  <data name="preferences_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\preferences_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="http_connect_failure" xml:space="preserve">
     <value>It was not possible to connect to the selected server.</value>
   </data>
   <data name="Icon48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon48x48.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Icon48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PowerFolder_Software_license" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PowerFolder Software license.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
@@ -169,16 +174,7 @@
   <data name="filelink_error_maxDownload" xml:space="preserve">
     <value>Please enter a number for the maximum download count of the file link.</value>
   </data>
-  <data name="PowerFolder_print_dark_2014_500px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PowerFolder_print_dark_2014_500px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="config_empty" xml:space="preserve">
     <value>Your preferences are empty. Please enter your credentials and server address.</value>
-  </data>
-  <data name="agt_update_misc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\agt_update_misc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="update_up_to_date" xml:space="preserve">
-    <value>Powerfolder is up to date.</value>
   </data>
 </root>

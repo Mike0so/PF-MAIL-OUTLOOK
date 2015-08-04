@@ -63,7 +63,7 @@
             // button_preferences
             // 
             this.button_preferences.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.button_preferences.Image = global::PowerFolder.Properties.Resources.preferences_icon;
+            this.button_preferences.Image = global::PowerFolder.Properties.Resources.SettingsIconsOutlook;
             resources.ApplyResources(this.button_preferences, "button_preferences");
             this.button_preferences.Name = "button_preferences";
             this.button_preferences.ShowImage = true;
@@ -72,10 +72,11 @@
             // button_pfmenu
             // 
             this.button_pfmenu.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            resources.ApplyResources(this.button_pfmenu, "button_pfmenu");
+            this.button_pfmenu.Image = global::PowerFolder.Properties.Resources.Icon48x48;
             this.button_pfmenu.Items.Add(this.pf_btn_homepage);
             this.button_pfmenu.Items.Add(this.pf_btn_documentation);
             this.button_pfmenu.Items.Add(this.btn_register);
+            resources.ApplyResources(this.button_pfmenu, "button_pfmenu");
             this.button_pfmenu.Name = "button_pfmenu";
             this.button_pfmenu.ShowImage = true;
             // 
@@ -103,7 +104,7 @@
             // update_btn
             // 
             this.update_btn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.update_btn.Image = global::PowerFolder.Properties.Resources.agt_update_misc;
+            this.update_btn.Image = global::PowerFolder.Properties.Resources.updateIconOutlook;
             resources.ApplyResources(this.update_btn, "update_btn");
             this.update_btn.Name = "update_btn";
             this.update_btn.ShowImage = true;

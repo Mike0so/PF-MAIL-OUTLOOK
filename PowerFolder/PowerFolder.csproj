@@ -281,6 +281,12 @@
   <ItemGroup>
     <None Include="Resources\agt_update_misc.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings-icons-outlook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update-icon-outlook.png" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

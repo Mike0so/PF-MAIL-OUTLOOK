@@ -61,16 +61,6 @@ namespace PowerFolder.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap agt_update_misc {
-            get {
-                object obj = ResourceManager.GetObject("agt_update_misc", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die PowerFolder Outlook Add-In ähnelt.
         /// </summary>
         internal static string application_title {
@@ -80,7 +70,8 @@ namespace PowerFolder.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Your did not enter your credentials.\r\n Please do that to save the preferences. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Your did not enter your credentials.
+        ///Please do that to save the preferences. ähnelt.
         /// </summary>
         internal static string config_credentials_empty {
             get {
@@ -153,7 +144,8 @@ namespace PowerFolder.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die It was not possible to authenticate the entered user.\r\n Please check your credentials. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die It was not possible to authenticate the entered user.
+        ///Please check your credentials. ähnelt.
         /// </summary>
         internal static string http_unauthorized {
             get {
@@ -162,12 +154,12 @@ namespace PowerFolder.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Icon Icon48x48 {
+        internal static System.Drawing.Bitmap Icon48x48 {
             get {
                 object obj = ResourceManager.GetObject("Icon48x48", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -191,32 +183,12 @@ namespace PowerFolder.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PowerFolder_print_dark_2014_500px {
-            get {
-                object obj = ResourceManager.GetObject("PowerFolder_print_dark_2014_500px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1031\deflangfe1031\themelang1031\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f2\fbidi \fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}
         ///{\f2\fbidi \fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}{\f37\fbidi \fswiss\fcharset0\fprq2{\*\panose 020f0502020204030204}Calibri;}{ [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
         /// </summary>
         internal static string PowerFolder_Software_license {
             get {
                 return ResourceManager.GetString("PowerFolder_Software_license", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PowerFolderIconLarge {
-            get {
-                object obj = ResourceManager.GetObject("PowerFolderIconLarge", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -233,9 +205,9 @@ namespace PowerFolder.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap preferences_icon {
+        internal static System.Drawing.Bitmap SettingsIconsOutlook {
             get {
-                object obj = ResourceManager.GetObject("preferences_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("SettingsIconsOutlook", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -255,6 +227,16 @@ namespace PowerFolder.Properties {
         internal static string update_up_to_date {
             get {
                 return ResourceManager.GetString("update_up_to_date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap updateIconOutlook {
+            get {
+                object obj = ResourceManager.GetObject("updateIconOutlook", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
