@@ -119,6 +119,7 @@
             this.Controls.Add(this.textbox_password);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FileLinkDialog";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FileLinkDialog_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -35,7 +35,7 @@ namespace PowerFolder
         private void update_btn_Click(object sender, RibbonControlEventArgs e)
         {
             Update.Updater updater = new Update.Updater(true);
-            Task result = updater.CheckVersionAsync(true);
+            updater.CheckForUpdate(true);
         }
 
 

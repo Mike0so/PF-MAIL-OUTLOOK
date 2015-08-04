@@ -165,5 +165,19 @@ namespace PowerFolder
             textbox_password.Visible = true;
             this.Update();
         }
+
+        private void FileLinkDialog_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _canceled = true;
+
+            textbox_password.Visible = false;
+            label_password.Visible = false;
+
+            textbox_password.Text = string.Empty;
+            textbox_maxDownloads.Text = string.Empty;
+            textbox_validTill.Text = string.Empty;
+
+            this.Hide();
+        }
     }
 }

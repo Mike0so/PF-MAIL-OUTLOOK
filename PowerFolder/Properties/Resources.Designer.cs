@@ -248,5 +248,14 @@ namespace PowerFolder.Properties {
                 return ResourceManager.GetString("update_new_version", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Powerfolder is up to date. ähnelt.
+        /// </summary>
+        internal static string update_up_to_date {
+            get {
+                return ResourceManager.GetString("update_up_to_date", resourceCulture);
+            }
+        }
     }
 }

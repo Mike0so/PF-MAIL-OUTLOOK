@@ -585,8 +585,7 @@ namespace PowerFolder.Http
 
                 Log.LogThis(string.Format("{0} {1} [Finished File-Link request url]",
                 _classname,
-                _methodname,
-                sb.ToString()), eloglevel.verbose);
+                _methodname), eloglevel.verbose);
                 
                 HttpWebRequest request = WebRequest.Create(sb.ToString()) as HttpWebRequest;
                 request.Timeout = _timeout;

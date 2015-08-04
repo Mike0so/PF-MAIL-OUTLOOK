@@ -13,7 +13,6 @@ namespace PowerFolder.Configuration
     {
         private Configuration _config;
 
-        private Security.SecurityManager _security;
         private static ConfigurationManager _instance;
 
         private const string _classname = "[ConfigurationManager]";

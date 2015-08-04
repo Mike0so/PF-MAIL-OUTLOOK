@@ -72,7 +72,7 @@ namespace PowerFolder
                 MessageBox.Show(Properties.Resources.config_password_recovery, Properties.Resources.application_title);
                 return;
             }
-            Process.Start(string.Format("{0}/login?Username={1}", textbox_server.Text, textbox_username.Text));
+            Process.Start(string.Format("{0}{1}/login?Username={2}", combobox_server_prefix.SelectedItem.ToString(), textbox_server.Text, textbox_username.Text));
         }
 
         private void HandleProgressBar(bool state)
@@ -176,6 +176,12 @@ namespace PowerFolder
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
+            textbox_maxDownloads.Text = string.Empty;
+            textbox_password.Text = string.Empty;
+            textbox_server.Text = string.Empty;
+            textbox_username.Text = string.Empty;
+            textbox_validTill.Text = string.Empty;
+
             this.Hide();
         }
 

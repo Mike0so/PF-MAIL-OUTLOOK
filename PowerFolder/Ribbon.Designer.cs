@@ -38,11 +38,11 @@
             this.mainTab = this.Factory.CreateRibbonTab();
             this.group = this.Factory.CreateRibbonGroup();
             this.button_preferences = this.Factory.CreateRibbonButton();
-            this.update_btn = this.Factory.CreateRibbonButton();
             this.button_pfmenu = this.Factory.CreateRibbonMenu();
             this.pf_btn_homepage = this.Factory.CreateRibbonButton();
             this.pf_btn_documentation = this.Factory.CreateRibbonButton();
             this.btn_register = this.Factory.CreateRibbonButton();
+            this.update_btn = this.Factory.CreateRibbonButton();
             this.mainTab.SuspendLayout();
             this.group.SuspendLayout();
             // 
@@ -56,8 +56,8 @@
             // group
             // 
             this.group.Items.Add(this.button_preferences);
-            this.group.Items.Add(this.update_btn);
             this.group.Items.Add(this.button_pfmenu);
+            this.group.Items.Add(this.update_btn);
             this.group.Name = "group";
             // 
             // button_preferences
@@ -68,15 +68,6 @@
             this.button_preferences.Name = "button_preferences";
             this.button_preferences.ShowImage = true;
             this.button_preferences.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button_preferences_Click);
-            // 
-            // update_btn
-            // 
-            this.update_btn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.update_btn.Image = global::PowerFolder.Properties.Resources.agt_update_misc;
-            resources.ApplyResources(this.update_btn, "update_btn");
-            this.update_btn.Name = "update_btn";
-            this.update_btn.ShowImage = true;
-            this.update_btn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.update_btn_Click);
             // 
             // button_pfmenu
             // 
@@ -108,6 +99,15 @@
             this.btn_register.Name = "btn_register";
             this.btn_register.ShowImage = true;
             this.btn_register.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_register_Click);
+            // 
+            // update_btn
+            // 
+            this.update_btn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.update_btn.Image = global::PowerFolder.Properties.Resources.agt_update_misc;
+            resources.ApplyResources(this.update_btn, "update_btn");
+            this.update_btn.Name = "update_btn";
+            this.update_btn.ShowImage = true;
+            this.update_btn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.update_btn_Click);
             // 
             // Ribbon
             // 

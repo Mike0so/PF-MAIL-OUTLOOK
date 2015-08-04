@@ -22,12 +22,13 @@ namespace PowerFolder
 {
     public partial class Plugin
     {
-        public Outlook.Application OutlookApplication;
-        public Outlook.Inspectors OutlookInspectors;
-        public Outlook.Inspector OutlookInspector;
-        public Outlook.MailItem OutlookMailItem;
+        private Outlook.Application OutlookApplication;
+        private Outlook.Inspectors OutlookInspectors;
+        private Outlook.Inspector OutlookInspector;
+        private Outlook.MailItem OutlookMailItem;
 
         bool newMail = true;
+        bool outstanding = false;
 
         const string _classname = "[Plugin]";
 
@@ -41,7 +42,7 @@ namespace PowerFolder
             OutlookApplication.ItemSend += new Microsoft.Office.Interop.Outlook.ApplicationEvents_11_ItemSendEventHandler(OutlookApplication_ItemSend);
 
             Update.Updater updater = new Update.Updater();
-            Task result = updater.CheckVersionAsync(false);
+            updater.CheckForUpdate();
         }
 
         void OutlookInspectors_NewInspector(Microsoft.Office.Interop.Outlook.Inspector Inspector)
@@ -83,7 +84,6 @@ namespace PowerFolder
                 newMail = true;
                 return;
             }
-
             OutlookMailItem.SaveAs(Path.GetTempPath() + "\\template1.oft", OlSaveAsType.olTemplate);
 
             if (Config.GetInstance().GetConfig().FileLinkDialogEachEmail)
@@ -99,7 +99,6 @@ namespace PowerFolder
 
                     thread.Start();
                     FileLinkDialog.GetInstance().linkParams = new Dictionary<string, string>();
-
                 }
             }
             else if (FileLinkDialog.GetInstance().linkParams.Count > 0)
@@ -135,47 +134,13 @@ namespace PowerFolder
 
                 thread.Start();
             }
-            /*
-            if (Config.GetInstance().GetConfig().FileLinkDialogEachEmail)
-            {
-                FileLinkDialog.GetInstance().ConfigurePasswordControls();
-                if (FileLinkDialog.GetInstance().ShowDialog() == DialogResult.OK)
-                {
-                    OutlookMailItem.SaveAs(Path.GetTempPath() + "\\template1.oft", OlSaveAsType.olTemplate);
-
-                    Thread thread = new Thread(() => ItemSend_Thread(
-                        FileLinkDialog.GetInstance().linkParams));
-
-                    bool passwordSet = string.IsNullOrEmpty(FileLinkDialog.GetInstance()._linkPassword);
-
-                    Logger.LogThis(string.Format("{0} {1} [Starting ItemSend_Thread with following params : maxDownloads : {2}, validDays : {3}, password set : {4}]"
-                        , _classname
-                        , _methodname
-                        , FileLinkDialog.GetInstance()._maxDownloads
-                        , FileLinkDialog.GetInstance()._validTill
-                        , passwordSet), Logging.eloglevel.verbose);
-                    thread.Start();
-                }
-            }
-            else
-            {
-                OutlookMailItem.SaveAs(Path.GetTempPath() + "\\template1.oft", OlSaveAsType.olTemplate);
-
-                Thread thread = new Thread(() => ItemSend_Thread(
-                    FileLinkDialog.GetInstance().linkParams));
-
-                Logger.LogThis(string.Format("{0} {1} [Starting Item_Send Thread without Dialog.]",
-                    _classname, _methodname), Logging.eloglevel.info);
-                thread.Start();
-            }*/
-                    Cancel = true;
+                Cancel = true;
         }
 
         private void ItemSend_Thread(Dictionary<string, string> linkParams)
         {
             const string _methodname = "[ItemSend_Thread]";
 
-            /* Hide Email Item from User */
             if (OutlookInspector.CurrentItem is Outlook.MailItem)
             {
                 Logger.LogThis(string.Format("{0} {1} [Saving E-Mail hiding from user]",
@@ -186,7 +151,6 @@ namespace PowerFolder
                 mail.Close(OlInspectorClose.olDiscard);
             }
 
-            /* Create a new OutlookItem from a saved template */
             Logger.LogThis(string.Format("{0} {1} [Creating new E-Mail from Template]",
                 _classname, _methodname),
                 Logging.eloglevel.verbose);
@@ -202,17 +166,15 @@ namespace PowerFolder
                 return;
             }
 
-            if (!responseGetInfo.IsJSONResponse())
+            /*if (!responseGetInfo.IsJSONResponse())
             {
                 Logger.LogThis(string.Format("{0} {1} [Exception : AccountsAPI #getInfo is not a JSON Response cant parse!]",
                     _classname, _methodname),
                     Logging.eloglevel.error);
                 return;
-            }
-
+            }*/
             JObject jsonResponse = JObject.Parse(responseGetInfo.Message);
 
-            /* Creating the Attachment ID for an Account MA-<AccountID> */
             string accountID = jsonResponse.GetValue("ID").ToString();
 
             const string folderName = "$mail_attachments";
@@ -232,8 +194,6 @@ namespace PowerFolder
                     Logging.eloglevel.warn);
             }
 
-
-            /* Counting the total file size of the attachments collection */
             foreach (Attachment a in newEmail.Attachments)
             {
                 attachmentsSize += a.Size;
@@ -255,7 +215,6 @@ namespace PowerFolder
                     return;
                 }
             }
-
             PFResponse responseFolderExists = api.FolderExists(folderID);
 
             if (responseFolderExists == null)
@@ -272,8 +231,6 @@ namespace PowerFolder
                 return;
             }
 
-            /* Check if the Mail-Attachment Folder exists.
-             * Otherwise create a new Mail-Attachment folder. */
             if (responseFolderExists.StatusCode == System.Net.HttpStatusCode.NotFound)
             {
                 PFResponse responseCreateFolder = api.CreateFolder(folderID,
@@ -293,7 +250,6 @@ namespace PowerFolder
                     return;
                 }
             }
-
             PFResponse responseDirectoryExists = api.DirectoryExists(folderIDBase64, directoryName);
 
             if (responseDirectoryExists == null)
@@ -348,7 +304,6 @@ namespace PowerFolder
                     return;
                 }
             }
-
             PFResponse uploadFilesResponse = api.UploadFiles(folderIDBase64, directoryName, newEmail.Attachments);
 
             if (uploadFilesResponse == null)
@@ -385,7 +340,6 @@ namespace PowerFolder
                 {
                     return;
                 }
-
                 PFResponse responseRecieveFileLink = api.RecieveFileLink(
                     folderIDBase64, directoryName, newEmail.Attachments[1]);
 
@@ -406,9 +360,8 @@ namespace PowerFolder
                 if (!responseRecieveFileLink.IsJSONResponse())
                 {
                     Logger.LogThis(string.Format("{0} {1} [The File-Link response was not a json response,"
-                        + "could not parse.]"), Logging.eloglevel.error);
+                        + "could not parse.]", _classname, _methodname), Logging.eloglevel.error);
                 }
-
                 string currentFileLink = JObject.Parse(responseRecieveFileLink.Message).GetValue("url").ToString();
 
                 if (string.IsNullOrEmpty(currentFileLink))
@@ -424,16 +377,11 @@ namespace PowerFolder
                     return;
                 }
 
-                /* Sometimes it can happen that you dont get the full fileLink 
-                   so if the baseURL is missing. We will add it by ourselfes. */
                 if (currentFileLink.StartsWith("/"))
                 {
                     currentFileLink = Config.GetInstance().GetConfig().BaseUrl + currentFileLink;
                 }
 
-                /* Replace the getlink with dl (direct downloadlink) 
-                   or if the link is password protected replace it with a
-                   'dlpw' (direct downloadlink)                          */
                 /*if (Config.GetInstance().GetConfig().FileLinkProtection)
                 {
                     currentFileLink.Replace("getlink", "dlpw");
@@ -443,7 +391,6 @@ namespace PowerFolder
                     currentFileLink.Replace("getlink", "dl");
                 } Needs to be fixed
                  */
-
                 fileLinks.Add(currentFileLink);
                 newEmail.Attachments[1].Delete();
             }
@@ -507,7 +454,6 @@ namespace PowerFolder
         }
         private void Plugin_Shutdown(object sender, System.EventArgs e)
         {
-            
         }
 
         #region Von VSTO generierter Code

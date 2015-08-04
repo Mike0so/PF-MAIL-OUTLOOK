@@ -23,69 +23,71 @@ namespace PowerFolder.Update
             this.calledByControl = calledByControl;
         }
 
-        /// <summary>
-        /// Recieves the latest version of the PowerFolder Outlook Add-In
-        /// </summary>
-        /// <param name="calledByControl">...</param>
-        /// <returns>0 if the version is up to date,
-        ///         1 if the version is outdated,
-        ///         2 if an error orccures while validating the version</returns>
-        public async Task<int> CheckVersionAsync(bool calledByControl)
+        public async void CheckForUpdate(bool calledByControl = false)
         {
-            const string _methodname = "[CheckVersionAsync]";
+            const string _methodname = "[CheckForUpdate]";
 
             Logger.LogThis(string.Format("{0} {1} [Checking for updates...]",
                 _classname, _methodname), Logging.eloglevel.info);
-
             try
             {
+                Thread thread = null;
+
                 HttpClient client = new HttpClient();
 
-                string currentVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString().Substring(0, 5);
-                string latestVersion = await client.GetStringAsync("http://checkversion.powerfolder.com/PowerFolderOutlook_LatestVersion.txt");
+                string versionCurrentStr = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString().Substring(0, 5);
+                string versionLatestStr = await client.GetStringAsync("http://checkversion.powerfolder.com/PowerFolderOutlook_LatestVersion.txt");
 
-                if (string.IsNullOrEmpty(latestVersion))
+                if (string.IsNullOrEmpty(versionLatestStr))
                 {
                     Logger.LogThis(string.Format("{0} {1} [The version from server was empty]",
                         _classname, _methodname), Logging.eloglevel.warn);
-                    return 2;
+                    return;
                 }
-                /* *TODO* PFC-2740
                 string[] seperator = { "." };
 
-                string[] splitedLocal = currentVersion.Split(seperator, StringSplitOptions.RemoveEmptyEntries);
-                string[] splitedLatest = latestVersion.Split(seperator, StringSplitOptions.RemoveEmptyEntries);
+                string[] splittedCurrent = versionCurrentStr.Split(seperator, StringSplitOptions.RemoveEmptyEntries);
+                string[] splittedLatest = versionLatestStr.Split(seperator, StringSplitOptions.RemoveEmptyEntries);
 
-                int localversion = int.Parse(splitedLocal[0]);
-                int latestversion = int.Parse(splitedLatest[0]);
-                */
+                for (int i = 0; i < 3; i++)
+                {
+                    int versionPartCurrent = int.Parse(splittedCurrent[i]);
+                    int versionPartLatest = int.Parse(splittedLatest[i]);
 
-                if (currentVersion.Equals(latestVersion))
-                {
-                    Logger.LogThis(string.Format("{0} {1} [Version : {2} is up to date]",
-                        _classname, _methodname, latestVersion), Logging.eloglevel.info);
-                    return 0;
+                    if (versionPartCurrent < versionPartLatest)
+                    {
+                        Logger.LogThis(string.Format("{0} {1} [A new version is available. Download-Link : https://my.powerfolder.com/dl/fi8Z33UQp9gf3L6pxJumVZ7c/PowerFolder_Outlook_Add-In_Beta.exe ]", _classname, _methodname), Logging.eloglevel.info);
+                        thread = new Thread(() => ShowVersionDialog(true));
+                        thread.Start();
+                    }
                 }
-                else
-                {
-                    Logger.LogThis(string.Format("{0} {1} [A new version is available. Download-Link : https://my.powerfolder.com/dl/fi8Z33UQp9gf3L6pxJumVZ7c/PowerFolder_Outlook_Add-In_Beta.exe ]", _classname, _methodname), Logging.eloglevel.info);
-                    Thread thread = new Thread(() => ShowVersionDialog());
-                    thread.Start();
-                    return 1;
-                }
+                Logger.LogThis(string.Format("{0} {1} [Add-In is up to date]", _classname, _methodname), Logging.eloglevel.info);
+                thread = new Thread(() => ShowVersionDialog(false, calledByControl));
+                thread.Start();
+                return;
             }
             catch (Exception e)
             {
                 Logger.LogThis(string.Format("{0} {1} [Error while trying to check the version. Exception : {2}]", _classname, _methodname, e.Message), Logging.eloglevel.error);
-                return 2;
+                return;
             }
         }
 
-        private void ShowVersionDialog()
+        public void ShowVersionDialog(bool updateAvailable = false, bool calledByControl = false)
         {
-            if (MessageBox.Show(Properties.Resources.update_new_version, Properties.Resources.application_title, MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (updateAvailable)
             {
-                Process.Start("https://my.powerfolder.com/dl/fi8Z33UQp9gf3L6pxJumVZ7c/PowerFolder_Outlook_Add-In_Beta.exe");
+                if (MessageBox.Show(Properties.Resources.update_new_version, Properties.Resources.application_title, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Process.Start("https://my.powerfolder.com/dl/fi8Z33UQp9gf3L6pxJumVZ7c/PowerFolder_Outlook_Add-In_Beta.exe");
+                }
+            }
+            else
+            {
+                if (calledByControl)
+                {
+                    MessageBox.Show(Properties.Resources.update_up_to_date, Properties.Resources.application_title);
+                }
             }
         }
     }

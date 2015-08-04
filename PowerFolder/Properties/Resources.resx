@@ -178,4 +178,7 @@
   <data name="agt_update_misc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agt_update_misc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="update_up_to_date" xml:space="preserve">
+    <value>Powerfolder is up to date.</value>
+  </data>
 </root>

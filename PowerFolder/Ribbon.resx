@@ -132,21 +132,6 @@
   <data name="&gt;&gt;button_preferences.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="update_btn.Label" xml:space="preserve">
-    <value>Check for updates</value>
-  </data>
-  <data name="&gt;&gt;update_btn.Name" xml:space="preserve">
-    <value>update_btn</value>
-  </data>
-  <data name="&gt;&gt;update_btn.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;update_btn.Parent" xml:space="preserve">
-    <value>group</value>
-  </data>
-  <data name="&gt;&gt;update_btn.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="button_pfmenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -238,6 +223,21 @@
     <value>group</value>
   </data>
   <data name="&gt;&gt;button_pfmenu.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="update_btn.Label" xml:space="preserve">
+    <value>Check for updates</value>
+  </data>
+  <data name="&gt;&gt;update_btn.Name" xml:space="preserve">
+    <value>update_btn</value>
+  </data>
+  <data name="&gt;&gt;update_btn.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;update_btn.Parent" xml:space="preserve">
+    <value>group</value>
+  </data>
+  <data name="&gt;&gt;update_btn.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="&gt;&gt;group.Name" xml:space="preserve">
