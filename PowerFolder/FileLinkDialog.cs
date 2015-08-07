@@ -133,7 +133,11 @@ namespace PowerFolder
                 textbox_maxDownloads.Text,
                 textbox_validTill.Text), Logging.eloglevel.verbose);
 
-
+            if (checkbox_dont_ask.Checked)
+            {
+                Config.GetInstance().GetConfig().FileLinkDialogEachEmail = false;
+                Config.GetInstance().SaveConfig(Config.GetInstance().GetConfig());
+            }
             textbox_password.Visible = false;
             label_password.Visible = false;
 

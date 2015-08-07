@@ -39,6 +39,7 @@
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_ok = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.checkbox_dont_ask = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,8 +81,8 @@
             // 
             // btn_cancel
             // 
-            this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.btn_cancel, "btn_cancel");
+            this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
@@ -95,10 +96,16 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::PowerFolder.Properties.Resources.pref_header;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Image = global::PowerFolder.Properties.Resources.pref_header;
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
+            // 
+            // checkbox_dont_ask
+            // 
+            resources.ApplyResources(this.checkbox_dont_ask, "checkbox_dont_ask");
+            this.checkbox_dont_ask.Name = "checkbox_dont_ask";
+            this.checkbox_dont_ask.UseVisualStyleBackColor = true;
             // 
             // FileLinkDialog
             // 
@@ -107,6 +114,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btn_cancel;
+            this.Controls.Add(this.checkbox_dont_ask);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.btn_cancel);
@@ -138,6 +146,7 @@
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Button btn_ok;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox checkbox_dont_ask;
 
     }
 }

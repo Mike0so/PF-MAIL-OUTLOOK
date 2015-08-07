@@ -185,5 +185,10 @@ namespace PowerFolder
             this.Hide();
         }
 
+        private void checkbox_useDefaultConfig_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

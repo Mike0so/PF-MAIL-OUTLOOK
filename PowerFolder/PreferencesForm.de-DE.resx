@@ -117,78 +117,75 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
+    <value>215, 352</value>
+  </data>
+  <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>287, 352</value>
+  </data>
   <data name="btn_cancel.Text" xml:space="preserve">
     <value>Abbrechen</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="combobox_server_prefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 165</value>
+    <value>100, 133</value>
   </data>
   <data name="textbox_server.Location" type="System.Drawing.Point, System.Drawing">
-    <value>228, 165</value>
+    <value>165, 133</value>
   </data>
   <data name="textbox_username.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 195</value>
+    <value>100, 158</value>
   </data>
   <data name="textbox_password.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 223</value>
+    <value>100, 181</value>
   </data>
   <data name="label_username.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 17</value>
+    <value>75, 13</value>
   </data>
   <data name="label_username.Text" xml:space="preserve">
     <value>Benutzername</value>
   </data>
   <data name="label_password.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 17</value>
+    <value>50, 13</value>
   </data>
   <data name="label_password.Text" xml:space="preserve">
     <value>Passwort</value>
   </data>
   <data name="linklabel_pw_recovery.Location" type="System.Drawing.Point, System.Drawing">
-    <value>139, 248</value>
+    <value>97, 203</value>
   </data>
   <data name="linklabel_pw_recovery.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 17</value>
+    <value>155, 13</value>
   </data>
   <data name="linklabel_pw_recovery.Text" xml:space="preserve">
     <value>Benutzerkonto wiederherstellen</value>
   </data>
   <data name="lbl_networkConfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 24</value>
+    <value>71, 18</value>
   </data>
   <data name="lbl_networkConfig.Text" xml:space="preserve">
     <value>Netzwerk</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 24</value>
+    <value>190, 18</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Datei-Links - Standardwerte</value>
   </data>
   <data name="label_validTill2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 17</value>
+    <value>35, 13</value>
   </data>
   <data name="label_validTill2.Text" xml:space="preserve">
     <value>Tage.</value>
   </data>
   <data name="label_validTill1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 17</value>
+    <value>49, 13</value>
   </data>
   <data name="label_validTill1.Text" xml:space="preserve">
     <value>Gültig für</value>
   </data>
-  <data name="label_maxDownloads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 17</value>
-  </data>
-  <data name="label_maxDownloads.Text" xml:space="preserve">
-    <value>max. Downloads</value>
-  </data>
   <data name="checkbox_useDefaultConfig.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 280</value>
-  </data>
-  <data name="checkbox_useDefaultConfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 21</value>
+    <value>100, 227</value>
   </data>
   <data name="checkbox_useDefaultConfig.Text" xml:space="preserve">
     <value>Standartwerte nutzen</value>

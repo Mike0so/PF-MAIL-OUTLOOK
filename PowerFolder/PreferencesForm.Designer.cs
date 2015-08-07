@@ -171,6 +171,7 @@
             resources.ApplyResources(this.checkbox_useDefaultConfig, "checkbox_useDefaultConfig");
             this.checkbox_useDefaultConfig.Name = "checkbox_useDefaultConfig";
             this.checkbox_useDefaultConfig.UseVisualStyleBackColor = true;
+            this.checkbox_useDefaultConfig.CheckedChanged += new System.EventHandler(this.checkbox_useDefaultConfig_CheckedChanged);
             // 
             // version_lbl
             // 
