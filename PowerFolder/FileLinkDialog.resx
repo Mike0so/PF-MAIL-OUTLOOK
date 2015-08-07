@@ -180,13 +180,13 @@
     <value>12, 138</value>
   </data>
   <data name="label_maxDownloads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 17</value>
+    <value>110, 17</value>
   </data>
   <data name="label_maxDownloads.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="label_maxDownloads.Text" xml:space="preserve">
-    <value>max Downloads</value>
+    <value>max. Downloads</value>
   </data>
   <data name="&gt;&gt;label_maxDownloads.Name" xml:space="preserve">
     <value>label_maxDownloads</value>

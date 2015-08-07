@@ -81,7 +81,6 @@
             this.Name = "RibbonSend";
             this.RibbonType = "Microsoft.Outlook.Mail.Compose";
             this.Tabs.Add(this.sendTab);
-            resources.ApplyResources(this, "$this");
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.RibbonSend_Load);
             this.sendTab.ResumeLayout(false);
             this.sendTab.PerformLayout();

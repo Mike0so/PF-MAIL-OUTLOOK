@@ -20,7 +20,7 @@ namespace PowerFolder.Http
 
         public PFApi()
         {
-            _timeout = 18000;
+            _timeout = 30000;
             _credentials = "Basic " + Convert.ToBase64String(
                 Encoding.UTF8.GetBytes(
                 string.Format("{0}:{1}",

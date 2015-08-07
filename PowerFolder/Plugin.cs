@@ -165,11 +165,20 @@ namespace PowerFolder
             {
                 return;
             }
+            if (responseGetInfo == null)
+            {
+                MessageBox.Show("An error occured while sending the Email. Please check your logs for more informations.", Properties.Resources.application_title);
+                newEmail.Display();
+                return;
+            }
+
             if (responseGetInfo.Message == null)
             {
-                MessageBox.Show("Error", "Error");
+                MessageBox.Show("An error occured while sending the Email. Please check your logs for more informations.", Properties.Resources.application_title);
                 newEmail.Display();
+                return;
             }
+
             /*if (!responseGetInfo.IsJSONResponse())
             {
                 Logger.LogThis(string.Format("{0} {1} [Exception : AccountsAPI #getInfo is not a JSON Response cant parse!]",

@@ -148,11 +148,23 @@
   <data name="linklabel_pw_recovery.Location" type="System.Drawing.Point, System.Drawing">
     <value>139, 248</value>
   </data>
+  <data name="linklabel_pw_recovery.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 17</value>
+  </data>
+  <data name="linklabel_pw_recovery.Text" xml:space="preserve">
+    <value>Benutzerkonto wiederherstellen</value>
+  </data>
   <data name="lbl_networkConfig.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 24</value>
   </data>
   <data name="lbl_networkConfig.Text" xml:space="preserve">
     <value>Netzwerk</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 24</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Datei-Links - Standardwerte</value>
   </data>
   <data name="label_validTill2.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 17</value>
@@ -166,14 +178,20 @@
   <data name="label_validTill1.Text" xml:space="preserve">
     <value>Gültig für</value>
   </data>
+  <data name="label_maxDownloads.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 17</value>
+  </data>
+  <data name="label_maxDownloads.Text" xml:space="preserve">
+    <value>max. Downloads</value>
+  </data>
   <data name="checkbox_useDefaultConfig.Location" type="System.Drawing.Point, System.Drawing">
     <value>142, 280</value>
   </data>
   <data name="checkbox_useDefaultConfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 21</value>
+    <value>165, 21</value>
   </data>
   <data name="checkbox_useDefaultConfig.Text" xml:space="preserve">
-    <value>Standart werte nutzen</value>
+    <value>Standartwerte nutzen</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

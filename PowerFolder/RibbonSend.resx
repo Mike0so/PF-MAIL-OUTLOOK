@@ -120,26 +120,26 @@
   <data name="ribbonDialogLauncherImpl1.ScreenTip" xml:space="preserve">
     <value>File Link Configuration</value>
   </data>
-  <data name="&gt;&gt;tab_group.Parent" xml:space="preserve">
-    <value>sendTab</value>
+  <data name="ribbonDialogLauncherImpl1.SuperTip" xml:space="preserve">
+    <value>Show the "File Link Configuration" to add additional options to a File Link</value>
   </data>
-  <data name="checkBox1.Label" xml:space="preserve">
-    <value>Show File Link configuration on sending</value>
+  <data name="stop_track_checkbox.Label" xml:space="preserve">
+    <value>Generate File-Links for attachments</value>
   </data>
-  <data name="&gt;&gt;RibbonSend.OfficeMenu.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;stop_track_checkbox.Name" xml:space="preserve">
+    <value>stop_track_checkbox</value>
   </data>
-  <data name="&gt;&gt;sendTab.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.TabView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="&gt;&gt;stop_track_checkbox.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.CheckBoxView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;stop_track_checkbox.Parent" xml:space="preserve">
     <value>tab_group</value>
   </data>
-  <data name="stop_track_checkbox.Label" xml:space="preserve">
-    <value>Upload attachments to PowerFolder</value>
+  <data name="&gt;&gt;stop_track_checkbox.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;tab_group.Name" xml:space="preserve">
-    <value>tab_group</value>
+  <data name="checkBox1.Label" xml:space="preserve">
+    <value>Show File-Link options on sending</value>
   </data>
   <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
     <value>checkBox1</value>
@@ -147,52 +147,49 @@
   <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.CheckBoxView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="&gt;&gt;RibbonSend.OfficeMenu.Name" xml:space="preserve">
-    <value>RibbonSend.OfficeMenu</value>
-  </data>
-  <data name="&gt;&gt;tab_group.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;stop_track_checkbox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;RibbonSend.OfficeMenu.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.OfficeMenuView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;tab_group.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;sendTab.Name" xml:space="preserve">
-    <value>sendTab</value>
-  </data>
-  <data name="&gt;&gt;RibbonSend.OfficeMenu.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;checkBox1.Parent" xml:space="preserve">
+    <value>tab_group</value>
   </data>
   <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="sendTab.Label" xml:space="preserve">
-    <value>TabNewMailMessage</value>
-  </data>
-  <data name="&gt;&gt;stop_track_checkbox.Name" xml:space="preserve">
-    <value>stop_track_checkbox</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Parent" xml:space="preserve">
-    <value>tab_group</value>
-  </data>
-  <data name="ribbonDialogLauncherImpl1.SuperTip" xml:space="preserve">
-    <value>Show the "File Link Configuration" to add additional options to a File Link</value>
-  </data>
   <data name="tab_group.Label" xml:space="preserve">
     <value>PowerFolder</value>
   </data>
-  <data name="&gt;&gt;stop_track_checkbox.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.CheckBoxView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="&gt;&gt;tab_group.Name" xml:space="preserve">
+    <value>tab_group</value>
+  </data>
+  <data name="&gt;&gt;tab_group.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;tab_group.Parent" xml:space="preserve">
+    <value>sendTab</value>
+  </data>
+  <data name="&gt;&gt;tab_group.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="sendTab.Label" xml:space="preserve">
+    <value>TabNewMailMessage</value>
+  </data>
+  <data name="&gt;&gt;sendTab.Name" xml:space="preserve">
+    <value>sendTab</value>
+  </data>
+  <data name="&gt;&gt;sendTab.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.TabView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>de-DE</value>
-  </metadata>
+  <data name="&gt;&gt;RibbonSend.OfficeMenu.Name" xml:space="preserve">
+    <value>RibbonSend.OfficeMenu</value>
+  </data>
+  <data name="&gt;&gt;RibbonSend.OfficeMenu.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.OfficeMenuView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;RibbonSend.OfficeMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;RibbonSend.OfficeMenu.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
 </root>

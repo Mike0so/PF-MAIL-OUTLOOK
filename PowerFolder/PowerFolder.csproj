@@ -264,16 +264,10 @@
     <None Include="Resources\Icon48x48.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PowerFolder_print_dark_2014_500px.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\PowerFolderIconLarge.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pref_header.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\preferences_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dialogImage.PNG" />
