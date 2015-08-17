@@ -341,6 +341,7 @@
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{10F2E2A7-A0A2-4E18-A11C-AB81EA709D2B}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{58C79E63-2A4B-48F1-957F-62C602C67D4E}</td><td>TEMPLATE</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>PowerFolder.Lokalisierte_Ressourcen</td><td>{568FC5F3-26CC-4651-887A-1981DC253907}</td><td>INSTALLDIR</td><td>2</td><td/><td>powerfolder.lokalisierte_res</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>PowerFolder.Prim_re_Ausgabe</td><td>{DB41E657-264D-48A9-A81C-92476D700820}</td><td>INSTALLDIR</td><td>2</td><td/><td>powerfolder.prim_re_ausgabe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
@@ -553,7 +554,7 @@
 		<row><td>LicenseAgreement</td><td>DlgLine</td><td>Line</td><td>48</td><td>234</td><td>326</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>LicenseAgreement</td><td>DlgTitle</td><td>Text</td><td>13</td><td>6</td><td>292</td><td>25</td><td>65539</td><td/><td>##IDS__IsLicenseDlg_LicenseAgreement##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>LicenseAgreement</td><td>ISPrintButton</td><td>PushButton</td><td>301</td><td>188</td><td>65</td><td>17</td><td>3</td><td/><td>##IDS_PRINT_BUTTON##</td><td>Agree</td><td/><td>0</td><td/><td/><td/></row>
-		<row><td>LicenseAgreement</td><td>Memo</td><td>ScrollableText</td><td>8</td><td>55</td><td>358</td><td>130</td><td>7</td><td/><td/><td/><td/><td>0</td><td/><td>F:\Arbeit\Projekte\C-Sharp\PowerFolder_Mail\PowerFolder\Resources\PowerFolder Software license.rtf</td><td/></row>
+		<row><td>LicenseAgreement</td><td>Memo</td><td>ScrollableText</td><td>8</td><td>55</td><td>358</td><td>130</td><td>7</td><td/><td/><td/><td/><td>0</td><td/><td>G:\Projekte\C#\Powerfolder_Mail\PowerFolder\Resources\PowerFolder Software license.rtf</td><td/></row>
 		<row><td>LicenseAgreement</td><td>Next</td><td>PushButton</td><td>230</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_NEXT##</td><td>Cancel</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>MaintenanceType</td><td>Back</td><td>PushButton</td><td>164</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_BACK##</td><td>Next</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>MaintenanceType</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary1</td></row>
@@ -1167,6 +1168,7 @@
 		<row><td>System64Folder</td><td>TARGETDIR</td><td>.:System64</td><td/><td>0</td><td/></row>
 		<row><td>SystemFolder</td><td>TARGETDIR</td><td>.:System32</td><td/><td>0</td><td/></row>
 		<row><td>TARGETDIR</td><td/><td>SourceDir</td><td/><td>0</td><td/></row>
+		<row><td>TEMPLATE</td><td>INSTALLDIR</td><td>Template</td><td/><td>0</td><td/></row>
 		<row><td>TempFolder</td><td>TARGETDIR</td><td>.:Temp</td><td/><td>0</td><td/></row>
 		<row><td>TemplateFolder</td><td>TARGETDIR</td><td>.:ShellNew</td><td/><td>0</td><td/></row>
 		<row><td>USERPROFILE</td><td>TARGETDIR</td><td>.:USERPR~1|UserProfile</td><td/><td>0</td><td/></row>
@@ -1864,6 +1866,7 @@
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 		<row><td>AlwaysInstall</td><td>PowerFolder.Lokalisierte_Ressourcen</td></row>
 		<row><td>AlwaysInstall</td><td>PowerFolder.Prim_re_Ausgabe</td></row>
 	</table>
@@ -1880,10 +1883,11 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
-		<row><td>powerfolder.dll.manifest</td><td>ISX_DEFAULTCOMPONENT</td><td>POWERF~1.MAN|PowerFolder.dll.manifest</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Arbeit\Projekte\C-Sharp\PowerFolder_Mail\PowerFolder\bin\Release\PowerFolder.dll.manifest</td><td>1</td><td/></row>
+		<row><td>filelinktemplate.html</td><td>ISX_DEFAULTCOMPONENT1</td><td>FILELI~1.HTM|FileLinkTemplate.html</td><td>0</td><td/><td/><td/><td>1</td><td>G:\Projekte\C#\Powerfolder_Mail\PowerFolder\bin\Release\Template\FileLinkTemplate.html</td><td>1</td><td/></row>
+		<row><td>powerfolder.dll.manifest</td><td>ISX_DEFAULTCOMPONENT</td><td>POWERF~1.MAN|PowerFolder.dll.manifest</td><td>0</td><td/><td/><td/><td>1</td><td>G:\Projekte\C#\Powerfolder_Mail\PowerFolder\bin\Release\PowerFolder.dll.manifest</td><td>1</td><td/></row>
 		<row><td>powerfolder.lokalisierte_res</td><td>PowerFolder.Lokalisierte_Ressourcen</td><td>PowerFolder.Lokalisierte Ressourcen</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PowerFolder&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
 		<row><td>powerfolder.prim_re_ausgabe</td><td>PowerFolder.Prim_re_Ausgabe</td><td>PowerFolder.Primäre Ausgabe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PowerFolder&gt;|Built</td><td>3</td><td/></row>
-		<row><td>powerfolder.vsto</td><td>ISX_DEFAULTCOMPONENT</td><td>POWERF~1.VST|PowerFolder.vsto</td><td>0</td><td/><td/><td/><td>1</td><td>F:\Arbeit\Projekte\C-Sharp\PowerFolder_Mail\PowerFolder\bin\Release\PowerFolder.vsto</td><td>1</td><td/></row>
+		<row><td>powerfolder.vsto</td><td>ISX_DEFAULTCOMPONENT</td><td>POWERF~1.VST|PowerFolder.vsto</td><td>0</td><td/><td/><td/><td>1</td><td>G:\Projekte\C#\Powerfolder_Mail\PowerFolder\bin\Release\PowerFolder.vsto</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2026,6 +2030,7 @@
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_517B22BB_1102_47F1_A694_67F5C416D0EC_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_BD09EAAB_0CBF_4BA3_BF94_4692E192A9FE_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>PowerFolder.Lokalisierte_Ressourcen</td><td/><td/><td>_C991653C_0B3C_4297_8172_5FB89E70F184_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>PowerFolder.Prim_re_Ausgabe</td><td/><td/><td>_9279497C_1B05_41B7_BE65_716254AF3445_FILTER</td><td/><td/><td/><td/></row>
 	</table>
@@ -4366,9 +4371,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{6D6EA106-99FB-4994-BDB0-D537E589FE23}</td><td/></row>
+		<row><td>ProductCode</td><td>{BCE6407F-B02D-4FC8-9A7C-BF076E2D5017}</td><td/></row>
 		<row><td>ProductName</td><td>Powerfolder</td><td/></row>
-		<row><td>ProductVersion</td><td>0.9.2.0</td><td/></row>
+		<row><td>ProductVersion</td><td>0.9.9.0</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4657,7 +4662,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
-		<row><td>{19D23C4D-1406-4C84-899B-638EFEBA3F69}</td><td></td><td>0.9.2.0</td><td></td><td>768</td><td/><td>ISACTIONPROP1</td><td>PFDoUpgrade</td></row>
+		<row><td>{19D23C4D-1406-4C84-899B-638EFEBA3F69}</td><td></td><td>0.9.9.0</td><td></td><td>768</td><td/><td>ISACTIONPROP1</td><td>PFDoUpgrade</td></row>
 	</table>
 
 	<table name="Verb">

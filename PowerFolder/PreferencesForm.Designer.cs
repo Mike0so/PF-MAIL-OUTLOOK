@@ -62,8 +62,8 @@
             // 
             // btn_cancel
             // 
-            this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.btn_cancel, "btn_cancel");
+            this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
@@ -78,8 +78,8 @@
             // 
             // picturebox_header
             // 
-            this.picturebox_header.Image = global::PowerFolder.Properties.Resources.pref_header;
             resources.ApplyResources(this.picturebox_header, "picturebox_header");
+            this.picturebox_header.Image = global::PowerFolder.Properties.Resources.pref_header;
             this.picturebox_header.Name = "picturebox_header";
             this.picturebox_header.TabStop = false;
             this.picturebox_header.Click += new System.EventHandler(this.picturebox_header_Click);
@@ -91,9 +91,9 @@
             // 
             // combobox_server_prefix
             // 
+            resources.ApplyResources(this.combobox_server_prefix, "combobox_server_prefix");
             this.combobox_server_prefix.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combobox_server_prefix.FormattingEnabled = true;
-            resources.ApplyResources(this.combobox_server_prefix, "combobox_server_prefix");
             this.combobox_server_prefix.Name = "combobox_server_prefix";
             // 
             // textbox_server

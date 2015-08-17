@@ -72,7 +72,7 @@ namespace PowerFolder
                 MessageBox.Show(Properties.Resources.config_password_recovery, Properties.Resources.application_title);
                 return;
             }
-            Process.Start(string.Format("{0}{1}/login?Username={2}", combobox_server_prefix.SelectedItem.ToString(), textbox_server.Text, textbox_username.Text));
+            Process.Start(string.Format("{0}{1}/password_recover?Username={2}", combobox_server_prefix.SelectedItem.ToString(), textbox_server.Text, textbox_username.Text));
         }
 
         private void HandleProgressBar(bool state)

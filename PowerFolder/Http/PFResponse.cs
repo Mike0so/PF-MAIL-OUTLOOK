@@ -31,7 +31,6 @@ namespace PowerFolder.Http
         /// <returns></returns>
         public static bool IsValidResponse(this PFResponse response, Microsoft.Office.Interop.Outlook.MailItem item)
         {
-            
             if (response.StatusCode == HttpStatusCode.Unauthorized ||
                 response.StatusCode == HttpStatusCode.Forbidden)
             {

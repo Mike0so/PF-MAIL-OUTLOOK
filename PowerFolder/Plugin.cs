@@ -43,6 +43,8 @@ namespace PowerFolder
 
             Update.Updater updater = new Update.Updater();
             updater.CheckForUpdate();
+
+
         }
 
         void OutlookInspectors_NewInspector(Microsoft.Office.Interop.Outlook.Inspector Inspector)
@@ -211,23 +213,33 @@ namespace PowerFolder
             {
                 attachmentsSize += a.Size;
             }
-
-            if (attachmentsSize > (spaceAllowed - spaceUsed))
+            try
             {
-                DialogResult dialogResult = MessageBox.Show(Properties.Resources.mail_quota_exceeded,
-                    Properties.Resources.application_title, MessageBoxButtons.YesNo);
 
-                if (dialogResult == DialogResult.Yes)
+                if (attachmentsSize > (spaceAllowed - spaceUsed))
                 {
-                    newEmail.Send();
-                    return;
-                }
-                else
-                {
-                    newEmail.Display();
-                    return;
+                    DialogResult dialogResult = MessageBox.Show(Properties.Resources.mail_quota_exceeded,
+                        Properties.Resources.application_title, MessageBoxButtons.YesNo);
+
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        newMail = false;
+                        newEmail.Send();
+                        return;
+                    }
+                    else
+                    {
+                        newEmail.Display();
+                        return;
+                    }
                 }
             }
+            catch (System.Exception e) 
+            {
+                Logger.LogThis(string.Format("{0} {1} [Error while sending email : {2}]", _classname, _methodname, e.Message), Logging.eloglevel.error);
+                return;
+            }
+
             PFResponse responseFolderExists = api.FolderExists(folderID);
 
             if (responseFolderExists == null)

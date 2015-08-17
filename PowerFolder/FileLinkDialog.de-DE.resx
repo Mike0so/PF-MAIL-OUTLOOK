@@ -118,26 +118,47 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="textbox_password.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 95</value>
+  </data>
+  <data name="label_password.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 94</value>
+  </data>
   <data name="label_password.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 13</value>
+    <value>65, 17</value>
   </data>
   <data name="label_password.Text" xml:space="preserve">
     <value>Passwort</value>
   </data>
+  <data name="label_maxDownloads.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 124</value>
+  </data>
+  <data name="textbox_maxDownloads.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 121</value>
+  </data>
+  <data name="label_validTill1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>265, 126</value>
+  </data>
   <data name="label_validTill1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 13</value>
+    <value>66, 17</value>
   </data>
   <data name="label_validTill1.Text" xml:space="preserve">
     <value>Gültig für</value>
   </data>
+  <data name="textbox_validTill.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 121</value>
+  </data>
+  <data name="label_validTill2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>385, 126</value>
+  </data>
   <data name="label_validTill2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
+    <value>45, 17</value>
   </data>
   <data name="label_validTill2.Text" xml:space="preserve">
     <value>Tage.</value>
   </data>
   <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>244, 143</value>
+    <value>356, 149</value>
   </data>
   <data name="btn_cancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 23</value>
@@ -146,7 +167,7 @@
     <value>Abbrechen</value>
   </data>
   <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>158, 143</value>
+    <value>268, 149</value>
   </data>
   <data name="btn_ok.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 23</value>
@@ -158,10 +179,10 @@
     <value>314, 69</value>
   </data>
   <data name="checkbox_dont_ask.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 149</value>
+    <value>15, 151</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>337, 177</value>
+    <value>450, 183</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
