@@ -223,15 +223,6 @@
   <data name="label_maxDownloads.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 381</value>
   </data>
-  <data name="checkbox_useDefaultConfig.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 263</value>
-  </data>
-  <data name="checkbox_useDefaultConfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 21</value>
-  </data>
-  <data name="checkbox_useDefaultConfig.Text" xml:space="preserve">
-    <value>Standartwerte nutzen</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAMAEBAAAAAAIABoBAAANgAAACAgAAAAACAAqBAAAJ4EAAAwMAAAAAAgAKglAABGFQAAKAAAABAA

@@ -33,7 +33,6 @@ namespace PowerFolder
 
         private void tab_group_DialogLauncherClick(object sender, RibbonControlEventArgs e)
         {
-            FileLinkDialog.GetInstance().ConfigurePasswordControls();
             FileLinkDialog.GetInstance().Show();
         }
 

@@ -48,7 +48,6 @@
             this.label_validTill1 = new System.Windows.Forms.Label();
             this.textbox_maxDownloads = new System.Windows.Forms.TextBox();
             this.label_maxDownloads = new System.Windows.Forms.Label();
-            this.checkbox_useDefaultConfig = new System.Windows.Forms.CheckBox();
             this.version_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_header)).BeginInit();
             this.SuspendLayout();
@@ -166,13 +165,6 @@
             resources.ApplyResources(this.label_maxDownloads, "label_maxDownloads");
             this.label_maxDownloads.Name = "label_maxDownloads";
             // 
-            // checkbox_useDefaultConfig
-            // 
-            resources.ApplyResources(this.checkbox_useDefaultConfig, "checkbox_useDefaultConfig");
-            this.checkbox_useDefaultConfig.Name = "checkbox_useDefaultConfig";
-            this.checkbox_useDefaultConfig.UseVisualStyleBackColor = true;
-            this.checkbox_useDefaultConfig.CheckedChanged += new System.EventHandler(this.checkbox_useDefaultConfig_CheckedChanged);
-            // 
             // version_lbl
             // 
             resources.ApplyResources(this.version_lbl, "version_lbl");
@@ -186,7 +178,6 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btn_cancel;
             this.Controls.Add(this.version_lbl);
-            this.Controls.Add(this.checkbox_useDefaultConfig);
             this.Controls.Add(this.label_validTill2);
             this.Controls.Add(this.textbox_validTill);
             this.Controls.Add(this.label_validTill1);
@@ -238,7 +229,6 @@
         private System.Windows.Forms.Label label_validTill1;
         private System.Windows.Forms.TextBox textbox_maxDownloads;
         private System.Windows.Forms.Label label_maxDownloads;
-        private System.Windows.Forms.CheckBox checkbox_useDefaultConfig;
         private System.Windows.Forms.Label version_lbl;
     }
 }

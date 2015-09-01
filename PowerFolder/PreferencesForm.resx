@@ -147,20 +147,11 @@
   <data name="linklabel_pw_recovery.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;version_lbl.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btn_ok.Name" xml:space="preserve">
-    <value>btn_ok</value>
-  </data>
   <data name="btn_cancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 23</value>
   </data>
-  <data name="picturebox_header.Size" type="System.Drawing.Size, System.Drawing">
-    <value>340, 76</value>
-  </data>
   <data name="&gt;&gt;textbox_server.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="textbox_password.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -171,8 +162,14 @@
   <data name="progressBar.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="checkbox_useDefaultConfig.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 278</value>
+  </data>
   <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>380, 433</value>
+  </data>
+  <data name="btn_cancel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -207,14 +204,20 @@
   <data name="&gt;&gt;label_maxDownloads.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="&gt;&gt;textbox_validTill.Name" xml:space="preserve">
+    <value>textbox_validTill</value>
+  </data>
   <data name="btn_ok.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>488, 468</value>
+  </data>
+  <data name="picturebox_header.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
   <data name="label_validTill2.Text" xml:space="preserve">
     <value>Days.</value>
-  </data>
-  <data name="label_validTill1.Text" xml:space="preserve">
-    <value>Valid for</value>
   </data>
   <data name="checkbox_useDefaultConfig.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -234,11 +237,8 @@
   <data name="label_username.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;btn_ok.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;version_lbl.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;label_validTill1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -246,74 +246,17 @@
   <data name="linklabel_pw_recovery.Text" xml:space="preserve">
     <value>Password recovery</value>
   </data>
-  <data name="&gt;&gt;textbox_username.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="&gt;&gt;label_server.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkbox_useDefaultConfig.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;lbl_networkConfig.Parent" xml:space="preserve">
+  <data name="&gt;&gt;combobox_server_prefix.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
-  </data>
-  <data name="textbox_validTill.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;label_username.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="label_validTill1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>271, 368</value>
-  </data>
-  <data name="&gt;&gt;progressBar.Name" xml:space="preserve">
-    <value>progressBar</value>
-  </data>
-  <data name="label_password.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="linklabel_pw_recovery.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;label_password.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;picturebox_header.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;textbox_maxDownloads.Name" xml:space="preserve">
-    <value>textbox_maxDownloads</value>
-  </data>
-  <data name="label_password.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="&gt;&gt;textbox_username.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;progressBar.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="btn_ok.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 23</value>
-  </data>
-  <data name="checkbox_useDefaultConfig.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="&gt;&gt;btn_cancel.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="label_password.Text" xml:space="preserve">
-    <value>Password</value>
-  </data>
-  <data name="label_server.Text" xml:space="preserve">
-    <value>Server</value>
-  </data>
-  <data name="&gt;&gt;picturebox_header.ZOrder" xml:space="preserve">
-    <value>17</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -571,6 +514,75 @@
         //8AAAAAAAD//wAAAAAAAP//AAAAAAAA//8=
 </value>
   </data>
+  <data name="&gt;&gt;label_username.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="label_validTill1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>271, 368</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;btn_ok.Name" xml:space="preserve">
+    <value>btn_ok</value>
+  </data>
+  <data name="label_password.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="linklabel_pw_recovery.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;label_password.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="progressBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;picturebox_header.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textbox_maxDownloads.Name" xml:space="preserve">
+    <value>textbox_maxDownloads</value>
+  </data>
+  <data name="label_password.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="textbox_validTill.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;lbl_networkConfig.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;progressBar.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="btn_ok.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 23</value>
+  </data>
+  <data name="checkbox_useDefaultConfig.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;combobox_server_prefix.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_cancel.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label_password.Text" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="label_server.Text" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="&gt;&gt;picturebox_header.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="textbox_validTill.Location" type="System.Drawing.Point, System.Drawing">
+    <value>337, 366</value>
+  </data>
   <data name="&gt;&gt;textbox_password.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -578,13 +590,10 @@
     <value>21, 198</value>
   </data>
   <data name="&gt;&gt;label_maxDownloads.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="checkbox_useDefaultConfig.Text" xml:space="preserve">
-    <value>Use File-Link defaults</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;textbox_password.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="linklabel_pw_recovery.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 17</value>
@@ -607,17 +616,14 @@
   <data name="version_lbl.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 439</value>
   </data>
-  <data name="&gt;&gt;textbox_server.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="btn_cancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>PreferencesForm</value>
   </data>
   <data name="textbox_validTill.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
+  </data>
+  <data name="progressBar.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="label_validTill2.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 17</value>
@@ -628,23 +634,20 @@
   <data name="label_username.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;combobox_server_prefix.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;textbox_maxDownloads.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="textbox_maxDownloads.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 22</value>
   </data>
-  <data name="&gt;&gt;label_password.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 433</value>
   </data>
   <data name="&gt;&gt;textbox_maxDownloads.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;combobox_server_prefix.Name" xml:space="preserve">
     <value>combobox_server_prefix</value>
-  </data>
-  <data name="label_maxDownloads.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 368</value>
   </data>
   <data name="&gt;&gt;textbox_password.Name" xml:space="preserve">
     <value>textbox_password</value>
@@ -658,26 +661,29 @@
   <data name="&gt;&gt;textbox_username.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;linklabel_pw_recovery.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="&gt;&gt;version_lbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label_server.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;linklabel_pw_recovery.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;textbox_username.ZOrder" xml:space="preserve">
+    <value>12</value>
   </data>
   <data name="lbl_networkConfig.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
+  <data name="&gt;&gt;btn_cancel.Name" xml:space="preserve">
+    <value>btn_cancel</value>
+  </data>
   <data name="lbl_networkConfig.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 128</value>
-  </data>
-  <data name="&gt;&gt;picturebox_header.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="textbox_validTill.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 22</value>
   </data>
   <data name="&gt;&gt;label_validTill1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;textbox_validTill.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -692,13 +698,16 @@
     <value>275, 22</value>
   </data>
   <data name="&gt;&gt;lbl_networkConfig.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="version_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="&gt;&gt;checkbox_useDefaultConfig.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_cancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;textbox_password.Parent" xml:space="preserve">
     <value>$this</value>
@@ -710,7 +719,7 @@
     <value>label_password</value>
   </data>
   <data name="&gt;&gt;textbox_validTill.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="linklabel_pw_recovery.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
@@ -721,17 +730,8 @@
   <data name="&gt;&gt;linklabel_pw_recovery.Name" xml:space="preserve">
     <value>linklabel_pw_recovery</value>
   </data>
-  <data name="label_server.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>File-Link - Defaults</value>
-  </data>
-  <data name="label_validTill2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>389, 368</value>
-  </data>
-  <data name="btn_cancel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+  <data name="checkbox_useDefaultConfig.Text" xml:space="preserve">
+    <value>Use File-Link defaults</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -750,9 +750,6 @@
   </data>
   <data name="combobox_server_prefix.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 24</value>
-  </data>
-  <data name="label_server.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 17</value>
   </data>
   <data name="combobox_server_prefix.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -794,19 +791,22 @@
     <value>16</value>
   </data>
   <data name="&gt;&gt;btn_ok.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>19</value>
   </data>
-  <data name="&gt;&gt;btn_cancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;textbox_server.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;version_lbl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label_password.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label_validTill2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>389, 368</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="version_lbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
   </data>
   <data name="picturebox_header.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -814,11 +814,11 @@
   <data name="&gt;&gt;label_password.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 433</value>
+  <data name="picturebox_header.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 76</value>
   </data>
   <data name="&gt;&gt;combobox_server_prefix.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="textbox_maxDownloads.Location" type="System.Drawing.Point, System.Drawing">
     <value>133, 366</value>
@@ -832,8 +832,8 @@
   <data name="&gt;&gt;label_username.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="textbox_password.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 22</value>
+  <data name="&gt;&gt;textbox_username.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;label_validTill1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -847,8 +847,8 @@
   <data name="label_validTill2.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
-  <data name="picturebox_header.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>AutoSize</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>File-Link - Defaults</value>
   </data>
   <data name="picturebox_header.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -856,59 +856,59 @@
   <data name="picturebox_header.Location" type="System.Drawing.Point, System.Drawing">
     <value>70, 21</value>
   </data>
+  <data name="lbl_networkConfig.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.9pt</value>
+  </data>
   <data name="&gt;&gt;label_validTill2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label_validTill2.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="linklabel_pw_recovery.Location" type="System.Drawing.Point, System.Drawing">
     <value>107, 249</value>
   </data>
-  <data name="&gt;&gt;lbl_networkConfig.Name" xml:space="preserve">
-    <value>lbl_networkConfig</value>
-  </data>
   <data name="&gt;&gt;textbox_server.Name" xml:space="preserve">
     <value>textbox_server</value>
   </data>
-  <data name="version_lbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
+  <data name="label_validTill1.Text" xml:space="preserve">
+    <value>Valid for</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
-  <data name="textbox_validTill.Location" type="System.Drawing.Point, System.Drawing">
-    <value>337, 366</value>
+  <data name="label_server.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;label_maxDownloads.Name" xml:space="preserve">
     <value>label_maxDownloads</value>
   </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.9pt</value>
+  </data>
   <data name="&gt;&gt;linklabel_pw_recovery.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>488, 468</value>
+  <data name="&gt;&gt;progressBar.Name" xml:space="preserve">
+    <value>progressBar</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="progressBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;lbl_networkConfig.Name" xml:space="preserve">
+    <value>lbl_networkConfig</value>
   </data>
   <data name="label_validTill1.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 17</value>
   </data>
-  <data name="checkbox_useDefaultConfig.Location" type="System.Drawing.Point, System.Drawing">
-    <value>109, 278</value>
+  <data name="label_maxDownloads.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 368</value>
   </data>
   <data name="&gt;&gt;label_validTill2.Name" xml:space="preserve">
     <value>label_validTill2</value>
   </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.9pt</value>
+  <data name="label_server.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 17</value>
   </data>
-  <data name="lbl_networkConfig.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.9pt</value>
+  <data name="btn_cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
   </data>
   <data name="&gt;&gt;label_username.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -922,14 +922,14 @@
   <data name="&gt;&gt;label_maxDownloads.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textbox_validTill.Name" xml:space="preserve">
-    <value>textbox_validTill</value>
+  <data name="&gt;&gt;btn_ok.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="checkbox_useDefaultConfig.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;combobox_server_prefix.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;picturebox_header.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="picturebox_header.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -946,8 +946,8 @@
   <data name="checkbox_useDefaultConfig.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 21</value>
   </data>
-  <data name="progressBar.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="textbox_password.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 22</value>
   </data>
   <data name="&gt;&gt;version_lbl.Parent" xml:space="preserve">
     <value>$this</value>
@@ -958,8 +958,8 @@
   <data name="textbox_server.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
-  <data name="&gt;&gt;btn_cancel.Name" xml:space="preserve">
-    <value>btn_cancel</value>
+  <data name="&gt;&gt;label_server.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;textbox_username.Name" xml:space="preserve">
     <value>textbox_username</value>
@@ -967,11 +967,11 @@
   <data name="&gt;&gt;lbl_networkConfig.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textbox_maxDownloads.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;label_server.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>15</value>
   </data>
   <data name="label_maxDownloads.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>

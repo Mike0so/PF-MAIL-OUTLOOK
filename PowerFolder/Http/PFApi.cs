@@ -20,7 +20,7 @@ namespace PowerFolder.Http
 
         public PFApi()
         {
-            _timeout = 30000;
+            _timeout = 300000;
             _credentials = "Basic " + Convert.ToBase64String(
                 Encoding.UTF8.GetBytes(
                 string.Format("{0}:{1}",
@@ -57,6 +57,15 @@ namespace PowerFolder.Http
 
                     return true;
                 }
+            }
+            catch (WebException we)
+            {
+                Log.LogThis(string.Format("{0} {1} [Error while trying to authenticate User : {2} Exception : {3}]",
+                    _classname, _methodname,
+                    ConfigManager.GetInstance().GetConfig().Username,
+                    we.Message), eloglevel.error);
+
+                return false;
             }
             catch (Exception e) 
             {
@@ -154,7 +163,7 @@ namespace PowerFolder.Http
 
             try
             {
-                HttpWebRequest request = WebRequest.Create(string.Format("{0}/api/folders/?action=getInfo&ID={1}"
+                HttpWebRequest request = WebRequest.Create(string.Format("{0}/api/folders/{1}?action=getInfo"
                     , ConfigManager.GetInstance().GetConfig().BaseUrl
                     , folderID)) as HttpWebRequest;
 
@@ -189,8 +198,8 @@ namespace PowerFolder.Http
                         PFresponse.ExceptionStatus = we.Status;
                         if (response.StatusCode != null)
                         {
-                            PFresponse.StatusCode = response.StatusCode;
                         }
+                            PFresponse.StatusCode = response.StatusCode;
                     }
                     Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, we.Message), eloglevel.error);
                     return PFresponse;

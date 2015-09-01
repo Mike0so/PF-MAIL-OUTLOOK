@@ -1047,14 +1047,30 @@ namespace PowerFolder.Logging
 
             if (!Directory.Exists(path))
             {
-                Directory.CreateDirectory(path);
+                try
+                {
+                    Directory.CreateDirectory(path);
+                }
+                catch (IOException e)
+                {
+                    System.Diagnostics.Debug.WriteLine("Exception : " + e.Message);
+                    return null;
+                }
             }
 
             path = path + "Outlook";
 
             if (!Directory.Exists(path))
             {
-                Directory.CreateDirectory(path);
+                try
+                {
+                    Directory.CreateDirectory(path);
+                }
+                catch (IOException e)
+                {
+                    System.Diagnostics.Debug.WriteLine("Exception : " + e.Message);
+                    return null;
+                }
             }
 
             return path;

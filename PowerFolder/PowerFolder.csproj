@@ -233,6 +233,7 @@
       <DependentUpon>RibbonSend.cs</DependentUpon>
     </Compile>
     <Compile Include="Security\SecurityManager.cs" />
+    <Compile Include="Template\HtmlHandler.cs" />
     <Compile Include="Update\Updater.cs" />
     <Compile Include="Utils\PFUtils.cs" />
     <EmbeddedResource Include="FileLinkDialog.de-DE.resx">
@@ -319,6 +320,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\update-icon-outlook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AttachmentTemplate.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

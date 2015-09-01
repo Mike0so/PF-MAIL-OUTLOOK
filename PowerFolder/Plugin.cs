@@ -17,6 +17,7 @@ using PowerFolder.Http;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
+using PowerFolder.Template;
 
 namespace PowerFolder
 {
@@ -28,7 +29,6 @@ namespace PowerFolder
         private Outlook.MailItem OutlookMailItem;
 
         bool newMail = true;
-        bool outstanding = false;
 
         const string _classname = "[Plugin]";
 
@@ -88,53 +88,43 @@ namespace PowerFolder
             }
             OutlookMailItem.SaveAs(Path.GetTempPath() + "\\template1.oft", OlSaveAsType.olTemplate);
 
+            Thread thread = null;
+
+
             if (Config.GetInstance().GetConfig().FileLinkDialogEachEmail)
             {
-                FileLinkDialog.GetInstance().ConfigurePasswordControls();
                 if (FileLinkDialog.GetInstance().ShowDialog() == DialogResult.OK)
                 {
-                    Dictionary<string, string> cache = ConvertToCache(FileLinkDialog.GetInstance().linkParams);
-
-                    Thread thread = new Thread(() => ItemSend_Thread(cache));
+                    thread = new Thread(() => ItemSend_Thread(
+                        FileLinkDialog.GetInstance().GetFileLinkParams(true)));
+                    thread.Start();
                     Logger.LogThis(string.Format("{0} {1} [Staring ItemSend_Thread to generate the PowerFolder Email]",
                         _classname, _methodname), Logging.eloglevel.info);
-
-                    thread.Start();
-                    FileLinkDialog.GetInstance().linkParams = new Dictionary<string, string>();
                 }
             }
-            else if (FileLinkDialog.GetInstance().linkParams.Count > 0)
+            else if (FileLinkDialog.GetInstance().GetFileLinkParams().Count > 0)
             {
-                Dictionary<string, string> cache = ConvertToCache(FileLinkDialog.GetInstance().linkParams);
-
-                Thread thread = new Thread(() => ItemSend_Thread(
-                    cache));
+                thread = new Thread(() => ItemSend_Thread(
+                    FileLinkDialog.GetInstance().GetFileLinkParams(true)));
+                thread.Start();
                 Logger.LogThis(string.Format("{0} {1} [Starting ItemSend_Thread to generate the PowerFolder Email]", _classname, _methodname),
                     Logging.eloglevel.info);
-
-                thread.Start();
-                FileLinkDialog.GetInstance().linkParams = new Dictionary<string, string>();
             }
-            else if (Config.GetInstance().GetConfig().UseDefaultFileLinkConfig &&
-                    Config.GetInstance().GetConfig().GetDefaultValues().Count > 0)
+            else if (Config.GetInstance().GetConfig().GetDefaultValues().Count > 0)
             {
-                    Thread thread = new Thread(() => ItemSend_Thread(
-                        Config.GetInstance().GetConfig().GetDefaultValues()));
-
-                    Logger.LogThis(string.Format("{0} {1} [Starting ItemSend_Thread to generate the PowerFolder Email]", _classname, _methodname),
-                        Logging.eloglevel.info);
-
-                    thread.Start();
+                thread = new Thread(() => ItemSend_Thread(
+                    Config.GetInstance().GetConfig().GetDefaultValues()));
+                Logger.LogThis(string.Format("{0} {1} [Starting ItemSend_Thread to generate the PowerFolder Email]", _classname, _methodname),
+                    Logging.eloglevel.info);
+                thread.Start();
             }
             else
             {
-                Thread thread = new Thread(() => ItemSend_Thread(
+                thread = new Thread(() => ItemSend_Thread(
                     new Dictionary<string, string>()));
-
+                thread.Start();
                 Logger.LogThis(string.Format("{0} {1} [Starting ItemSend_Thread to generate the PowerFolder Email]", _classname, _methodname),
                     Logging.eloglevel.info);
-
-                thread.Start();
             }
                 Cancel = true;
         }
@@ -215,28 +205,25 @@ namespace PowerFolder
             }
             try
             {
-
                 if (attachmentsSize > (spaceAllowed - spaceUsed))
                 {
-                    DialogResult dialogResult = MessageBox.Show(Properties.Resources.mail_quota_exceeded,
-                        Properties.Resources.application_title, MessageBoxButtons.YesNo);
-
-                    if (dialogResult == DialogResult.Yes)
-                    {
+                  if(MessageBox.Show(Properties.Resources.mail_quota_exceeded,
+                        Properties.Resources.application_title, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                  {
                         newMail = false;
                         newEmail.Send();
                         return;
-                    }
-                    else
-                    {
+                  }
+                  else
+                  {
                         newEmail.Display();
                         return;
-                    }
+                  }
                 }
             }
             catch (System.Exception e) 
             {
-                Logger.LogThis(string.Format("{0} {1} [Error while sending email : {2}]", _classname, _methodname, e.Message), Logging.eloglevel.error);
+                Logger.LogThis(string.Format("{0} {1} [Error while checking QUOTA : {2}]", _classname, _methodname, e.Message), Logging.eloglevel.error);
                 return;
             }
 
@@ -275,6 +262,7 @@ namespace PowerFolder
                     return;
                 }
             }
+
             PFResponse responseDirectoryExists = api.DirectoryExists(folderIDBase64, directoryName);
 
             if (responseDirectoryExists == null)
@@ -406,30 +394,69 @@ namespace PowerFolder
                 {
                     currentFileLink = Config.GetInstance().GetConfig().BaseUrl + currentFileLink;
                 }
-
-                /*if (Config.GetInstance().GetConfig().FileLinkProtection)
+                if (linkParams.ContainsKey(FileLinkContraints.PASSWORD))
                 {
-                    currentFileLink.Replace("getlink", "dlpw");
+                    currentFileLink = currentFileLink.Replace("getlink", "dlpw");
                 }
                 else
                 {
-                    currentFileLink.Replace("getlink", "dl");
-                } Needs to be fixed
-                 */
+                    currentFileLink = currentFileLink.Replace("getlink", "dl");
+                }
                 fileLinks.Add(currentFileLink);
                 newEmail.Attachments[1].Delete();
             }
-            string linkHeader = Environment.NewLine + "----------*Attachments*----------";
-            newEmail.Body += linkHeader;
+            HtmlHandler htmlHandler = new HtmlHandler(fileLinks);
 
-            foreach (string s in fileLinks)
+            if (htmlHandler.CreateTempFolder())
             {
-                string current = s;
+                Logger.LogThis(string.Format("{0} {1} [Created temp folder for html files]"
+                    , _classname, _methodname)
+                    , Logging.eloglevel.info);
 
-                current = Environment.NewLine + s;
-                newEmail.Body += current;          
+                List<string> htmlPaths = htmlHandler.CreateFiles();
+                if (!htmlHandler._innerError)
+                {
+                    foreach (string s in htmlPaths)
+                    {
+                        newEmail.Attachments.Add(s, Outlook.OlAttachmentType.olByValue);
+                    }
+                }
+                else
+                {
+                    Logger.LogThis(string.Format("{0} {1} [It was not possible to create the html files. Using file links instead]"
+                        , _classname, _methodname)
+                        , Logging.eloglevel.warn);
+
+                    string linkHeader = Environment.NewLine + "----------*Attachments*----------";
+                    newEmail.Body += linkHeader;
+                    foreach (string s in fileLinks)
+                    {
+                        string current = s;
+
+                        current = Environment.NewLine + s;
+                        newEmail.Body += current;
+                    }
+                    newEmail.Body += linkHeader;
+                }
             }
-            newEmail.Body += linkHeader;
+            else
+            {
+                Logger.LogThis(string.Format("{0} {1} [It was not possible to create the html files. Using file links instead]"
+                    , _classname, _methodname)
+                    , Logging.eloglevel.warn);
+
+                string linkHeader = Environment.NewLine + "----------*Attachments*----------";
+                newEmail.Body += linkHeader;
+                foreach (string s in fileLinks)
+                {
+                    string current = s;
+
+                    current = Environment.NewLine + s;
+                    newEmail.Body += current;          
+                }
+                newEmail.Body += linkHeader;
+            }
+            
             newEmail.Save();
 
             newMail = false;

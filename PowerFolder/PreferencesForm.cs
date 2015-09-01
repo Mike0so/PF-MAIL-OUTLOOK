@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-
 using PowerFolder.Configuration;
 using PowerFolder.Http;
 using System.Diagnostics;
@@ -56,7 +55,6 @@ namespace PowerFolder
 
             textbox_maxDownloads.Text = _config.GetConfig().FileLinkDownloadCount;
             textbox_validTill.Text = _config.GetConfig().FileLinkValidFor;
-            checkbox_useDefaultConfig.Checked = _config.GetConfig().UseDefaultFileLinkConfig;
         }
 
         private void picturebox_header_Click(object sender, EventArgs e)
@@ -101,7 +99,6 @@ namespace PowerFolder
 
             _config.GetConfig().Username = textbox_username.Text;
             _config.GetConfig().BaseUrl = string.Format("{0}{1}", combobox_server_prefix.SelectedItem, textbox_server.Text);
-            _config.GetConfig().UseDefaultFileLinkConfig = bool.Parse(checkbox_useDefaultConfig.Checked.ToString());
             _config.GetConfig().Password = Security.SecurityManager.Encrypt(textbox_password.Text);
 
             int parser = 0;
@@ -176,12 +173,13 @@ namespace PowerFolder
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
+            /* NEEDS TO BE FIXED *
             textbox_maxDownloads.Text = string.Empty;
             textbox_password.Text = string.Empty;
             textbox_server.Text = string.Empty;
             textbox_username.Text = string.Empty;
             textbox_validTill.Text = string.Empty;
-
+            */
             this.Hide();
         }
 
