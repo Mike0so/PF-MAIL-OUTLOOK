@@ -135,7 +135,7 @@ namespace PowerFolder
 
             if (OutlookInspector.CurrentItem is Outlook.MailItem)
             {
-                Logger.LogThis(string.Format("{0} {1} [Saving E-Mail hiding from user]",
+                Logger.LogThis(string.Format("{0} {1} [Saving E-Mail as Template]",
                     _classname, _methodname),
                     Logging.eloglevel.verbose);
 

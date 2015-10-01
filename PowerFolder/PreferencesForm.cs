@@ -154,13 +154,6 @@ namespace PowerFolder
             {
                 return false;
             }
-
-            if (string.IsNullOrEmpty(textbox_server.Text) &&
-                string.IsNullOrEmpty(textbox_username.Text) &&
-                string.IsNullOrEmpty(textbox_password.Text))
-            {
-                return false;
-            }
             return true;
         }
 
@@ -173,20 +166,7 @@ namespace PowerFolder
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
-            /* NEEDS TO BE FIXED *
-            textbox_maxDownloads.Text = string.Empty;
-            textbox_password.Text = string.Empty;
-            textbox_server.Text = string.Empty;
-            textbox_username.Text = string.Empty;
-            textbox_validTill.Text = string.Empty;
-            */
             this.Hide();
         }
-
-        private void checkbox_useDefaultConfig_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

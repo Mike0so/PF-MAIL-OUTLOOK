@@ -117,16 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="textbox_password.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="textbox_password.Location" type="System.Drawing.Point, System.Drawing">
-    <value>123, 103</value>
+    <value>92, 84</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="textbox_password.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="textbox_password.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 22</value>
+    <value>99, 20</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="textbox_password.TabIndex" type="System.Int32, mscorlib">
@@ -144,14 +147,20 @@
   <data name="&gt;&gt;textbox_password.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <metadata name="label_password.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="label_password.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label_password.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 107</value>
+    <value>9, 87</value>
+  </data>
+  <data name="label_password.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label_password.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 17</value>
+    <value>53, 13</value>
   </data>
   <data name="label_password.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -171,14 +180,20 @@
   <data name="&gt;&gt;label_password.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <metadata name="label_maxDownloads.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="label_maxDownloads.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label_maxDownloads.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 138</value>
+    <value>9, 112</value>
+  </data>
+  <data name="label_maxDownloads.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label_maxDownloads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 17</value>
+    <value>85, 13</value>
   </data>
   <data name="label_maxDownloads.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -198,14 +213,17 @@
   <data name="&gt;&gt;label_maxDownloads.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <metadata name="textbox_maxDownloads.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="textbox_maxDownloads.Location" type="System.Drawing.Point, System.Drawing">
-    <value>123, 135</value>
+    <value>92, 110</value>
   </data>
   <data name="textbox_maxDownloads.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="textbox_maxDownloads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 22</value>
+    <value>99, 20</value>
   </data>
   <data name="textbox_maxDownloads.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -222,14 +240,20 @@
   <data name="&gt;&gt;textbox_maxDownloads.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <metadata name="label_validTill1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="label_validTill1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label_validTill1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>259, 138</value>
+    <value>194, 112</value>
+  </data>
+  <data name="label_validTill1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label_validTill1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 17</value>
+    <value>45, 13</value>
   </data>
   <data name="label_validTill1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -249,14 +273,17 @@
   <data name="&gt;&gt;label_validTill1.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <metadata name="textbox_validTill.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="textbox_validTill.Location" type="System.Drawing.Point, System.Drawing">
-    <value>325, 135</value>
+    <value>244, 110</value>
   </data>
   <data name="textbox_validTill.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="textbox_validTill.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 22</value>
+    <value>36, 20</value>
   </data>
   <data name="textbox_validTill.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -273,14 +300,20 @@
   <data name="&gt;&gt;textbox_validTill.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <metadata name="label_validTill2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="label_validTill2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label_validTill2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>377, 138</value>
+    <value>283, 112</value>
+  </data>
+  <data name="label_validTill2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label_validTill2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 17</value>
+    <value>34, 13</value>
   </data>
   <data name="label_validTill2.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -300,14 +333,17 @@
   <data name="&gt;&gt;label_validTill2.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <metadata name="btn_cancel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 175</value>
+    <value>270, 142</value>
   </data>
   <data name="btn_cancel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="btn_cancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>56, 19</value>
   </data>
   <data name="btn_cancel.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -327,14 +363,17 @@
   <data name="&gt;&gt;btn_cancel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="btn_ok.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>279, 175</value>
+    <value>209, 142</value>
   </data>
   <data name="btn_ok.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="btn_ok.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>56, 19</value>
   </data>
   <data name="btn_ok.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -354,14 +393,17 @@
   <data name="&gt;&gt;btn_ok.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <metadata name="pictureBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 14</value>
+    <value>11, 11</value>
   </data>
   <data name="pictureBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>417, 69</value>
+    <value>313, 58</value>
   </data>
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -378,17 +420,17 @@
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="checkbox_dont_ask.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="checkbox_dont_ask.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="checkbox_dont_ask.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 176</value>
-  </data>
-  <data name="checkbox_dont_ask.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>11, 143</value>
   </data>
   <data name="checkbox_dont_ask.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 21</value>
+    <value>107, 17</value>
   </data>
   <data name="checkbox_dont_ask.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -412,10 +454,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>447, 210</value>
+    <value>335, 171</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -674,7 +716,7 @@
 </value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>PowerFolder</value>

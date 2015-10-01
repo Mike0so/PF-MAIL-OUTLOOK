@@ -119,109 +119,109 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>293, 439</value>
+    <value>220, 357</value>
   </data>
   <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>385, 439</value>
+    <value>289, 357</value>
   </data>
   <data name="btn_cancel.Text" xml:space="preserve">
     <value>Abbrechen</value>
   </data>
   <data name="progressBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 412</value>
+    <value>9, 335</value>
   </data>
   <data name="progressBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>464, 23</value>
+    <value>348, 19</value>
   </data>
   <data name="picturebox_header.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 20</value>
+    <value>12, 11</value>
   </data>
   <data name="label_server.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 162</value>
+    <value>9, 132</value>
   </data>
   <data name="combobox_server_prefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 155</value>
+    <value>88, 126</value>
   </data>
   <data name="textbox_server.Location" type="System.Drawing.Point, System.Drawing">
-    <value>203, 157</value>
+    <value>152, 128</value>
   </data>
   <data name="textbox_username.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 188</value>
+    <value>88, 153</value>
   </data>
   <data name="textbox_password.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 220</value>
+    <value>88, 179</value>
   </data>
   <data name="label_username.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 193</value>
+    <value>9, 157</value>
   </data>
   <data name="label_username.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 17</value>
+    <value>75, 13</value>
   </data>
   <data name="label_username.Text" xml:space="preserve">
     <value>Benutzername</value>
   </data>
   <data name="label_password.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 225</value>
+    <value>9, 183</value>
   </data>
   <data name="label_password.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 17</value>
+    <value>50, 13</value>
   </data>
   <data name="label_password.Text" xml:space="preserve">
     <value>Passwort</value>
   </data>
   <data name="linklabel_pw_recovery.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 244</value>
+    <value>85, 201</value>
   </data>
   <data name="linklabel_pw_recovery.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 17</value>
+    <value>155, 13</value>
   </data>
   <data name="linklabel_pw_recovery.Text" xml:space="preserve">
     <value>Benutzerkonto wiederherstellen</value>
   </data>
   <data name="lbl_networkConfig.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 126</value>
+    <value>8, 102</value>
   </data>
   <data name="lbl_networkConfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 24</value>
+    <value>71, 18</value>
   </data>
   <data name="lbl_networkConfig.Text" xml:space="preserve">
     <value>Netzwerk</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 341</value>
+    <value>9, 277</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 24</value>
+    <value>190, 18</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Datei-Links - Standardwerte</value>
   </data>
   <data name="label_validTill2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>402, 381</value>
+    <value>302, 310</value>
   </data>
   <data name="label_validTill2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 17</value>
+    <value>35, 13</value>
   </data>
   <data name="label_validTill2.Text" xml:space="preserve">
     <value>Tage.</value>
   </data>
   <data name="textbox_validTill.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 378</value>
+    <value>262, 307</value>
   </data>
   <data name="label_validTill1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>277, 381</value>
+    <value>208, 310</value>
   </data>
   <data name="label_validTill1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 17</value>
+    <value>49, 13</value>
   </data>
   <data name="label_validTill1.Text" xml:space="preserve">
     <value>Gültig für</value>
   </data>
   <data name="textbox_maxDownloads.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 378</value>
+    <value>96, 307</value>
   </data>
   <data name="label_maxDownloads.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 381</value>
+    <value>9, 310</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

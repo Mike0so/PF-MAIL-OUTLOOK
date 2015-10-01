@@ -20,9 +20,6 @@ namespace PowerFolder
 
         private const string _classname = "[FileLinkDialog]";
 
-        public string _linkPassword { get; private set; }
-        public string _validTill { get; private set; }
-        public string _maxDownloads { get; private set; }
         public bool _canceled { get; private set; }
 
         public Dictionary<string, string> linkParams;
