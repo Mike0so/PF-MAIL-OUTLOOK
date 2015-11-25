@@ -34,8 +34,8 @@ namespace PowerFolder.Http
             string _credentials = "Basic " + Convert.ToBase64String(
                 Encoding.UTF8.GetBytes(
                 string.Format("{0}:{1}",
-                ConfigManager.GetInstance().GetConfig().Username,
-                Security.SecurityManager.Decrypt(ConfigManager.GetInstance().GetConfig().Password))));
+                ConfigManager.GetInstance().GetUsername(),
+                ConfigManager.GetInstance().GetPassword())));
 
 
             request.Method = "POST";

@@ -5,6 +5,8 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Text;
 
 namespace PowerFolder.Logging
 {
@@ -251,6 +253,16 @@ namespace PowerFolder.Logging
 			}
 
 		}
+
+        public static void LogThisError(WebException e)
+        {
+            m_LogMethods.LogThisError(e);
+        }
+
+        public static void LogThisError(Exception e)
+        {
+            m_LogMethods.LogThisError(e);
+        }
 		public static elogprofile Profile
 		{
 			get
@@ -975,6 +987,22 @@ namespace PowerFolder.Logging
 			//return sFilePath;
 			return;
 		}
+
+        public void LogThisError(WebException e)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("Exception occured");
+            builder.Append(string.Format("Exception Details : {0}", e.ToString()));
+            LogThis(builder.ToString(), eloglevel.error);
+        }
+
+        public void LogThisError(Exception e)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("Exception occured");
+            builder.Append(string.Format("Exception Details : {0}", e.ToString()));
+            LogThis(builder.ToString(), eloglevel.error);
+        }
 		public void LogThis(string logtext,eloglevel loglevel)
 		{
 			LogThis(logtext, loglevel, m_logprefix);           

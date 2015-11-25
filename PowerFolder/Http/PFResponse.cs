@@ -70,17 +70,5 @@ namespace PowerFolder.Http
             }
             return true;
         }
-
-        public static bool IsJSONResponse(this PFResponse response)
-        {
-            if (!string.IsNullOrEmpty(response.Message))
-            {
-                if (response.Message.StartsWith("{"))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
     }
 }

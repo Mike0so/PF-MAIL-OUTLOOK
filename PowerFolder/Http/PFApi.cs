@@ -14,18 +14,18 @@ namespace PowerFolder.Http
     public class PFApi
     {
         private string _credentials;
+        private string _baseURL;
+        private string _classname = "[PFApi]";
         private int _timeout;
-
-        private const string _classname = "[PFApi]";
-
         public PFApi()
         {
             _timeout = 300000;
             _credentials = "Basic " + Convert.ToBase64String(
                 Encoding.UTF8.GetBytes(
                 string.Format("{0}:{1}",
-                ConfigManager.GetInstance().GetConfig().Username,
-                Security.SecurityManager.Decrypt(ConfigManager.GetInstance().GetConfig().Password))));
+                ConfigManager.GetInstance().GetUsername(),
+                ConfigManager.GetInstance().GetPassword())));
+            _baseURL = string.Format("{0}{1}", ConfigManager.GetInstance().GetBaseUrlPrefix(), ConfigManager.GetInstance().GetBaseUrl());
         }
 
         /// <summary>
@@ -33,18 +33,16 @@ namespace PowerFolder.Http
         /// 
         /// </summary>
         /// <returns>The state of the authentication result</returns>
-        public bool CanAuthenticate()
+        public bool TryToAuthenticate()
         {
-            const string _methodname = "[CanAuthenticate]";
-
             Log.LogThis(string.Format("Authenticating User : {0}",
-                ConfigManager.GetInstance().GetConfig().Username), eloglevel.info);
+                ConfigManager.GetInstance().GetUsername()), eloglevel.info);
 
             try
             {
                 HttpWebRequest request = WebRequest.Create(
                     string.Format("{0}/api/accounts?action=getInfo", 
-                    ConfigManager.GetInstance().GetConfig().BaseUrl)) as HttpWebRequest;
+                    _baseURL)) as HttpWebRequest;
 
                 request.Timeout = _timeout;
                 request.Method = "GET";
@@ -53,32 +51,24 @@ namespace PowerFolder.Http
                 using (HttpWebResponse response = request.GetResponse() as HttpWebResponse) 
                 {
                     Log.LogThis(string.Format("Successfuly authenticated User : {0}",
-                        ConfigManager.GetInstance().GetConfig().Username), eloglevel.info);
+                        ConfigManager.GetInstance().GetUsername()), eloglevel.info);
 
                     return true;
                 }
             }
             catch (WebException we)
             {
-                Log.LogThis(string.Format("{0} {1} [Error while trying to authenticate User : {2} Exception : {3}]",
-                    _classname, _methodname,
-                    ConfigManager.GetInstance().GetConfig().Username,
-                    we.Message), eloglevel.error);
-
+                Log.LogThisError(we);
                 return false;
             }
             catch (Exception e) 
             {
-                Log.LogThis(string.Format("{0} {1} [Error while trying to authenticate User : {2} Exception : {3}]",
-                    _classname, _methodname,
-                    ConfigManager.GetInstance().GetConfig().Username,
-                    e.Message), eloglevel.error);
-                
+                Log.LogThisError(e);
                 return false;
             }
         }
 
-        public PFResponse CollectAccountInfo()
+        public PFResponse GetAccountInfo()
         {
             const string _methodname = "[CollectAccountInfo]";
 
@@ -87,15 +77,15 @@ namespace PowerFolder.Http
             Log.LogThis(string.Format("{0} {1} [Collecting account info for user : {2} url : {3}]",
                 _classname,
                 _methodname,
-                ConfigManager.GetInstance().GetConfig().Username,
-                string.Format("{0}/api/accounts?action=getInfo",ConfigManager.GetInstance().GetConfig().BaseUrl))
+                ConfigManager.GetInstance().GetUsername(),
+                string.Format("{0}/api/accounts?action=getInfo", _baseURL))
                 , eloglevel.info);
 
             try
             {
                 HttpWebRequest request = WebRequest.Create(
                     string.Format("{0}/api/accounts?action=getInfo",
-                        ConfigManager.GetInstance().GetConfig().BaseUrl)) as HttpWebRequest;
+                        _baseURL)) as HttpWebRequest;
 
                 request.Timeout = _timeout;
                 request.Method = "GET";
@@ -113,6 +103,7 @@ namespace PowerFolder.Http
 
                                 PFresponse.Message = result;
                                 PFresponse.StatusCode = response.StatusCode;
+
                                 Log.LogThis(string.Format("{0} {1} [Successfuly recieved server response]", _classname, _methodname), eloglevel.info);
                                 return PFresponse;
                             }
@@ -132,14 +123,14 @@ namespace PowerFolder.Http
                             PFresponse.StatusCode = response.StatusCode;
                         }
                     }
-                    Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, we.Message), eloglevel.error);
+                    Log.LogThisError(we);
                     return PFresponse;
                 }
          
             }
             catch (Exception e)
             {
-                Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, e.Message), eloglevel.error);
+                Log.LogThisError(e);
                 return null;
             }
             return null;
@@ -164,7 +155,7 @@ namespace PowerFolder.Http
             try
             {
                 HttpWebRequest request = WebRequest.Create(string.Format("{0}/api/folders/{1}?action=getInfo"
-                    , ConfigManager.GetInstance().GetConfig().BaseUrl
+                    , _baseURL
                     , folderID)) as HttpWebRequest;
 
                 request.Timeout = _timeout;
@@ -201,13 +192,13 @@ namespace PowerFolder.Http
                         }
                             PFresponse.StatusCode = response.StatusCode;
                     }
-                    Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, we.Message), eloglevel.error);
+                    Log.LogThisError(we);
                     return PFresponse;
                 }
             }
             catch (Exception e)
             {
-                Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, e.Message), eloglevel.error);
+                Log.LogThisError(e);
                 return null;
             }
             return null;
@@ -228,7 +219,7 @@ namespace PowerFolder.Http
             try
             {
                 HttpWebRequest request = WebRequest.Create(string.Format("{0}/api/folders?action=create&ID={1}&name={2}",
-                    ConfigManager.GetInstance().GetConfig().BaseUrl,
+                    _baseURL,
                     folderID,
                     name)) as HttpWebRequest;
 
@@ -274,14 +265,13 @@ namespace PowerFolder.Http
                             PFresponse.StatusCode = response.StatusCode;
                         }
                     }
-                    Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, we.Message), eloglevel.error);
-
+                    Log.LogThisError(we);
                     return PFresponse;
                 }
             }
             catch (Exception e)
             {
-                Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, e.Message), eloglevel.error);
+                Log.LogThisError(e);
                 return null;
             }
             return null;
@@ -309,7 +299,7 @@ namespace PowerFolder.Http
             try
             {
                 HttpWebRequest request = WebRequest.Create(string.Format("{0}/filesapi/{1}/{2}?action=exists",
-                                    ConfigManager.GetInstance().GetConfig().BaseUrl,
+                                    _baseURL,
                                     folderID,
                                     directoryName)) as HttpWebRequest;
                 request.Timeout = _timeout;
@@ -355,20 +345,19 @@ namespace PowerFolder.Http
                                 PFresponse.StatusCode = response.StatusCode;
                             }
                         }
-                        Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, we.Message), eloglevel.error);
+                        Log.LogThisError(we);
                         return PFresponse;
                     }
                     PFresponse.StatusCode = response.StatusCode;
                     PFresponse.ExceptionStatus = we.Status;
 
-                    Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, we.Message), eloglevel.error);
-
+                    Log.LogThisError(we);
                     return PFresponse;
                 }
             }
             catch (Exception e)
             {
-                Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, e.Message), eloglevel.error);
+                Log.LogThisError(e);
                 return null;
             }
             return null;
@@ -396,7 +385,7 @@ namespace PowerFolder.Http
             try
             {
                 HttpWebRequest request = WebRequest.Create(string.Format("{0}/filesapi/{1}?action=createsubdir&type=dir&dirName={2}",
-                                    ConfigManager.GetInstance().GetConfig().BaseUrl,
+                                    _baseURL,
                                     folderID,
                                     directoryName)) as HttpWebRequest;
                 request.Timeout = _timeout;
@@ -441,20 +430,19 @@ namespace PowerFolder.Http
                         }
                     }
                     PFresponse.ExceptionStatus = we.Status;
-                    Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, we.Message), eloglevel.error);
-
+                    Log.LogThisError(we);
                     return PFresponse;
                 }
             }
             catch (Exception e)
             {
-                Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, e.Message), eloglevel.error);
+                Log.LogThisError(e);
                 return null;
             }
             return null;
         }
 
-        public PFResponse UploadFiles(string folderID, string directoryName, Microsoft.Office.Interop.Outlook.Attachments attachments)
+        public PFResponse UploadAttachments(string folderID, string directoryName, Microsoft.Office.Interop.Outlook.Attachments attachments)
         {
             const string _methodname = "[UploadFiles]";
             string workingDirectory = Guid.NewGuid().ToString().Replace("-", "");
@@ -493,7 +481,7 @@ namespace PowerFolder.Http
                         postParams.Add("file", new FormUpload.FileParameter(binarys, attachment.FileName, "application/octet-stream"));
 
                         HttpWebResponse response = FormUpload.MultipartFormDataPost(string.Format("{0}/upload/{1}",
-                            ConfigManager.GetInstance().GetConfig().BaseUrl,
+                            _baseURL,
                             folderID), postParams);
 
                         PFresponse.StatusCode = response.StatusCode;
@@ -523,19 +511,27 @@ namespace PowerFolder.Http
                         }
                     }
                     PFresponse.ExceptionStatus = we.Status;
-                    Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, we.Message), eloglevel.error);
+                    Log.LogThisError(we);
 
                     return PFresponse;
                 }
             }
             catch (Exception e)
             {
-                Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, e.Message), eloglevel.error);
+                Log.LogThisError(e);
                 return null;
             }
         }
 
-        public PFResponse CreateFileLink(string folderID, string directoryName,
+        /// <summary>
+        /// Stores a file link for the specified file
+        /// </summary>
+        /// <param name="folderID">The ID of the folder</param>
+        /// <param name="directoryName">The name of the directory</param>
+        /// <param name="attachment">The attachment wich the link will be generated for</param>
+        /// <param name="linkParams">Dictionary of the configuration for this file link</param>
+        /// <returns></returns>
+        public PFResponse StoreFileLink(string folderID, string directoryName,
             Microsoft.Office.Interop.Outlook.Attachment attachment, Dictionary<string, string> linkParams)
         {
             const string _methodname = "[CreateFileLink]";
@@ -549,13 +545,9 @@ namespace PowerFolder.Http
 
             try
             {
-                Log.LogThis(string.Format("{0} {1} [Checking for given Parameters]",
-                    _classname, _methodname)
-                    , eloglevel.verbose);
-
                 /* Build the url dynamic depending on the params the user selected to configure */
                 string url = string.Format("{0}/getlink/{1}/{2}/{3}?action=store",
-                    ConfigManager.GetInstance().GetConfig().BaseUrl,
+                    _baseURL,
                     folderID,
                     directoryName,
                     attachment.DisplayName);
@@ -591,10 +583,6 @@ namespace PowerFolder.Http
                     }
                 }
                 sb.Append("&json=1");
-
-                Log.LogThis(string.Format("{0} {1} [Finished File-Link request url]",
-                _classname,
-                _methodname), eloglevel.verbose);
                 
                 HttpWebRequest request = WebRequest.Create(sb.ToString()) as HttpWebRequest;
                 request.Timeout = _timeout;
@@ -636,7 +624,7 @@ namespace PowerFolder.Http
                             PFresponse.StatusCode = response.StatusCode;
                         }
                         PFresponse.ExceptionStatus = we.Status;
-                        Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, we.Message), eloglevel.error);
+                        Log.LogThisError(we);
 
                         return PFresponse;
                     }
@@ -644,13 +632,20 @@ namespace PowerFolder.Http
             }
             catch (Exception e)
             {
-                Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, e.Message), eloglevel.error);
+                Log.LogThisError(e);
                 return null;
             }
             return null;
         }
 
-        public PFResponse RecieveFileLink(string folderID, string directoryName, Microsoft.Office.Interop.Outlook.Attachment attachment)
+        /// <summary>
+        /// Recieves a specified File-Link based on the parameters
+        /// </summary>
+        /// <param name="folderID">The folder wich is holding the file link</param>
+        /// <param name="directoryName">The directory wich contains the file</param>
+        /// <param name="attachment"></param>
+        /// <returns></returns>
+        public PFResponse GetFileLink(string folderID, string directoryName, Microsoft.Office.Interop.Outlook.Attachment attachment)
         {
             const string _methodname = "[RecieveFileLink]";
 
@@ -664,7 +659,7 @@ namespace PowerFolder.Http
             try
             {
                 HttpWebRequest request = WebRequest.Create(string.Format("{0}/getlink/{1}/{2}/{3}?json=1",
-                    ConfigManager.GetInstance().GetConfig().BaseUrl,
+                    _baseURL,
                     folderID,
                     directoryName,
                     attachment.DisplayName)) as HttpWebRequest;
@@ -708,14 +703,14 @@ namespace PowerFolder.Http
                             PFresponse.StatusCode = response.StatusCode;
                         }
                     }
-                    Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, we.Message), eloglevel.error);
+                    Log.LogThisError(we);
 
                     return PFresponse;
                 }
             }
             catch (Exception e)
             {
-                Log.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, e.Message), eloglevel.error);
+                Log.LogThisError(e);
                 return null;
             }
             return null;

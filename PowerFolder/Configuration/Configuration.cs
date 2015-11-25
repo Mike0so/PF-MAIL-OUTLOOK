@@ -17,20 +17,20 @@ namespace PowerFolder.Configuration
         public bool FileLinkDialogEachEmail { get; set; }
         public string FileLinkValidFor { get; set; }
         public string FileLinkDownloadCount { get; set; }
+        public string FileSizeConfiguration { get; set; }
+    }
 
-        public Dictionary<string, string> GetDefaultValues()
-        {
-            Dictionary<string, string> listparams = new Dictionary<string, string>();
-
-            if (!string.IsNullOrEmpty(FileLinkValidFor))
-            {
-                listparams.Add("valid", FileLinkValidFor);
-            }
-            if (!string.IsNullOrEmpty(FileLinkDownloadCount))
-            {
-                listparams.Add("downloads", FileLinkDownloadCount);
-            }
-            return listparams;
-        }
+    public static class ConfigurationContrains
+    {
+        public const string KEY_USERNAME = "Username";
+        public const string KEY_PASSWORD = "Password";
+        public const string KEY_BASEURL = "BaseUrl";
+        public const string KEY_ADDINID = "AddInID";
+        public const string KEY_USEFILELINKDEFAULTS = "UseDefaultFileLinkConfig";
+        public const string KEY_FILELINKVALIDITY = "FileLinkValidFor";
+        public const string KEY_FILELINKDOWNLOADCOUNT = "FileLinkDownloadCount";
+        public const string KEY_FILESIZE = "FileSizeConfiguration";
+        public const string KEY_TRACKEMAILS = "TrackEmails";
+        public const string KEY_FILELINKDIALOGONSEND = "FileLinkDialogEachEmail";
     }
 }

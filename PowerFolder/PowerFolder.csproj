@@ -201,6 +201,7 @@
   <ItemGroup>
     <Compile Include="Configuration\Configuration.cs" />
     <Compile Include="Configuration\ConfigurationManager.cs" />
+    <Compile Include="Configuration\JsonExtensions.cs" />
     <Compile Include="FileLinkDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +212,8 @@
     <Compile Include="Http\PFApi.cs" />
     <Compile Include="Http\PFResponse.cs" />
     <Compile Include="Logging\Log.cs" />
+    <Compile Include="Mail\OutboxDirectory.cs" />
+    <Compile Include="Mail\OutboxDirectoryManager.cs" />
     <Compile Include="PreferencesForm.cs">
       <SubType>Form</SubType>
     </Compile>

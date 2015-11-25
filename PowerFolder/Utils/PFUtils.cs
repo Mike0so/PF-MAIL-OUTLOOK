@@ -59,6 +59,10 @@ namespace PowerFolder.Utils
         {
             int number;
 
+            if (value == null)
+            {
+                return false;
+            }
             bool result = int.TryParse(value, out number);
 
             if (result)
@@ -69,6 +73,57 @@ namespace PowerFolder.Utils
             {
                 return false;
             }
+        }
+
+        public static bool TryToParseBytes(string value)
+        {
+            if (value == null)
+            {
+                return false;
+            }
+
+            byte outValue;
+
+            bool result = byte.TryParse(value, out outValue);
+
+            if (result)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool TryToParseLong(string value)
+        {
+            if (value == null)
+            {
+                return false;
+            }
+
+            long outerResult;
+
+            bool result = long.TryParse(value, out outerResult);
+            if (result && outerResult > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static string FormatBytes(long bytes)
+        {
+
+            const int scale = 1024;
+            string[] orders = new string[] { "GB", "MB", "KB", "Bytes" };
+            long max = (long)Math.Pow(scale, orders.Length - 1);
+
+            foreach (string order in orders)
+            {
+                if (bytes > max)
+                    return string.Format("{0:##.##} {1}", decimal.Divide(bytes, max), order);
+
+                max /= scale;
+            }
+            return "0 Bytes";
         }
     }
 }

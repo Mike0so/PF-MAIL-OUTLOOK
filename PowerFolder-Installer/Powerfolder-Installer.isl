@@ -1883,6 +1883,7 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
+		<row><td>attachmenttemplate.html</td><td>ISX_DEFAULTCOMPONENT</td><td>ATTACH~1.HTM|AttachmentTemplate.html</td><td>0</td><td/><td/><td/><td>1</td><td>G:\Projekte\C#\Powerfolder_Mail\PowerFolder\bin\Release\AttachmentTemplate.html</td><td>1</td><td/></row>
 		<row><td>filelinktemplate.html</td><td>ISX_DEFAULTCOMPONENT1</td><td>FILELI~1.HTM|FileLinkTemplate.html</td><td>0</td><td/><td/><td/><td>1</td><td>G:\Projekte\C#\Powerfolder_Mail\PowerFolder\bin\Release\Template\FileLinkTemplate.html</td><td>1</td><td/></row>
 		<row><td>powerfolder.dll.manifest</td><td>ISX_DEFAULTCOMPONENT</td><td>POWERF~1.MAN|PowerFolder.dll.manifest</td><td>0</td><td/><td/><td/><td>1</td><td>G:\Projekte\C#\Powerfolder_Mail\PowerFolder\bin\Release\PowerFolder.dll.manifest</td><td>1</td><td/></row>
 		<row><td>powerfolder.lokalisierte_res</td><td>PowerFolder.Lokalisierte_Ressourcen</td><td>PowerFolder.Lokalisierte Ressourcen</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PowerFolder&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
@@ -4371,9 +4372,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{BCE6407F-B02D-4FC8-9A7C-BF076E2D5017}</td><td/></row>
+		<row><td>ProductCode</td><td>{9C7AF675-FAB8-4D12-B0B6-108FA0D41E7A}</td><td/></row>
 		<row><td>ProductName</td><td>Powerfolder</td><td/></row>
-		<row><td>ProductVersion</td><td>0.9.9.0</td><td/></row>
+		<row><td>ProductVersion</td><td>0.9.10.0</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>

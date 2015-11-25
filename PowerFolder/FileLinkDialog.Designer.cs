@@ -85,14 +85,14 @@
             resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
-            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
+            this.btn_cancel.Click += new System.EventHandler(this.OnCancel_Click);
             // 
             // btn_ok
             // 
             resources.ApplyResources(this.btn_ok, "btn_ok");
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.UseVisualStyleBackColor = true;
-            this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
+            this.btn_ok.Click += new System.EventHandler(this.OnSave_Click);
             // 
             // pictureBox1
             // 
@@ -127,8 +127,8 @@
             this.Controls.Add(this.textbox_password);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FileLinkDialog";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FileLinkDialog_FormClosing);
-            this.Load += new System.EventHandler(this.FileLinkDialog_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnForm_Closing);
+            this.Load += new System.EventHandler(this.OnForm_Loading);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

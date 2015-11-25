@@ -10,22 +10,21 @@ namespace PowerFolder.Security
 {
     public class SecurityManager
     {
-        private static readonly byte[] initVectorBytes = Encoding.ASCII.GetBytes("tu89geji340t89u2");
-       
-        private const int keysize = 256;
+        private static readonly byte[] _initVectorBytes = Encoding.ASCII.GetBytes("tu89geji340t89u2");    
+        private const int _keysize = 256;
 
         public static string Encrypt(string plainText)
         {
-            string passPhrase = Configuration.ConfigurationManager.GetInstance().GetConfig().AddInID;
+            string passPhrase = Configuration.ConfigurationManager.GetInstance().GetAddInID();
 
             byte[] plainTextBytes = Encoding.UTF8.GetBytes(plainText);
             using (PasswordDeriveBytes password = new PasswordDeriveBytes(passPhrase, null))
             {
-                byte[] keyBytes = password.GetBytes(keysize / 8);
+                byte[] keyBytes = password.GetBytes(_keysize / 8);
                 using (RijndaelManaged symmetricKey = new RijndaelManaged())
                 {
                     symmetricKey.Mode = CipherMode.CBC;
-                    using (ICryptoTransform encryptor = symmetricKey.CreateEncryptor(keyBytes, initVectorBytes))
+                    using (ICryptoTransform encryptor = symmetricKey.CreateEncryptor(keyBytes, _initVectorBytes))
                     {
                         using (MemoryStream memoryStream = new MemoryStream())
                         {
@@ -44,16 +43,21 @@ namespace PowerFolder.Security
 
         public static string Decrypt(string cipherText)
         {
-            string passPhrase = Configuration.ConfigurationManager.GetInstance().GetConfig().AddInID;
+            if (string.IsNullOrEmpty(cipherText))
+            {
+                return null;
+            }
+
+            string passPhrase = Configuration.ConfigurationManager.GetInstance().GetAddInID();
 
             byte[] cipherTextBytes = Convert.FromBase64String(cipherText);
             using(PasswordDeriveBytes password = new PasswordDeriveBytes(passPhrase, null))
             {
-                byte[] keyBytes = password.GetBytes(keysize / 8);
+                byte[] keyBytes = password.GetBytes(_keysize / 8);
                 using(RijndaelManaged symmetricKey = new RijndaelManaged())
                 {
                     symmetricKey.Mode = CipherMode.CBC;
-                    using(ICryptoTransform decryptor = symmetricKey.CreateDecryptor(keyBytes, initVectorBytes))
+                    using(ICryptoTransform decryptor = symmetricKey.CreateDecryptor(keyBytes, _initVectorBytes))
                     {
                         using(MemoryStream memoryStream = new MemoryStream(cipherTextBytes))
                         {

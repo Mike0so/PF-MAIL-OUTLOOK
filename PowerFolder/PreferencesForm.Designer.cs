@@ -49,7 +49,11 @@
             this.textbox_maxDownloads = new System.Windows.Forms.TextBox();
             this.label_maxDownloads = new System.Windows.Forms.Label();
             this.version_lbl = new System.Windows.Forms.Label();
+            this.trackbar_minFilesize = new System.Windows.Forms.TrackBar();
+            this.label_filesize = new System.Windows.Forms.Label();
+            this.lbl_filesize2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_header)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackbar_minFilesize)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_ok
@@ -57,12 +61,12 @@
             resources.ApplyResources(this.btn_ok, "btn_ok");
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.UseVisualStyleBackColor = true;
-            this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
+            this.btn_ok.Click += new System.EventHandler(this.OnSave);
             // 
             // btn_cancel
             // 
-            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
@@ -77,11 +81,11 @@
             // 
             // picturebox_header
             // 
-            resources.ApplyResources(this.picturebox_header, "picturebox_header");
             this.picturebox_header.Image = global::PowerFolder.Properties.Resources.pref_header;
+            resources.ApplyResources(this.picturebox_header, "picturebox_header");
             this.picturebox_header.Name = "picturebox_header";
             this.picturebox_header.TabStop = false;
-            this.picturebox_header.Click += new System.EventHandler(this.picturebox_header_Click);
+            this.picturebox_header.Click += new System.EventHandler(this.OnLogo_Click);
             // 
             // label_server
             // 
@@ -90,9 +94,9 @@
             // 
             // combobox_server_prefix
             // 
-            resources.ApplyResources(this.combobox_server_prefix, "combobox_server_prefix");
             this.combobox_server_prefix.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combobox_server_prefix.FormattingEnabled = true;
+            resources.ApplyResources(this.combobox_server_prefix, "combobox_server_prefix");
             this.combobox_server_prefix.Name = "combobox_server_prefix";
             // 
             // textbox_server
@@ -126,7 +130,7 @@
             resources.ApplyResources(this.linklabel_pw_recovery, "linklabel_pw_recovery");
             this.linklabel_pw_recovery.Name = "linklabel_pw_recovery";
             this.linklabel_pw_recovery.TabStop = true;
-            this.linklabel_pw_recovery.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklabel_pw_recovery_LinkClicked);
+            this.linklabel_pw_recovery.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnPasswordRecovery_Click);
             // 
             // lbl_networkConfig
             // 
@@ -170,6 +174,25 @@
             resources.ApplyResources(this.version_lbl, "version_lbl");
             this.version_lbl.Name = "version_lbl";
             // 
+            // trackbar_minFilesize
+            // 
+            this.trackbar_minFilesize.LargeChange = 1024;
+            resources.ApplyResources(this.trackbar_minFilesize, "trackbar_minFilesize");
+            this.trackbar_minFilesize.Maximum = 102400;
+            this.trackbar_minFilesize.Name = "trackbar_minFilesize";
+            this.trackbar_minFilesize.SmallChange = 512;
+            this.trackbar_minFilesize.ValueChanged += new System.EventHandler(this.trackbar_filesize_ValueChanged);
+            // 
+            // label_filesize
+            // 
+            resources.ApplyResources(this.label_filesize, "label_filesize");
+            this.label_filesize.Name = "label_filesize";
+            // 
+            // lbl_filesize2
+            // 
+            resources.ApplyResources(this.lbl_filesize2, "lbl_filesize2");
+            this.lbl_filesize2.Name = "lbl_filesize2";
+            // 
             // PreferencesForm
             // 
             this.AcceptButton = this.btn_ok;
@@ -177,6 +200,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btn_cancel;
+            this.Controls.Add(this.lbl_filesize2);
+            this.Controls.Add(this.label_filesize);
+            this.Controls.Add(this.trackbar_minFilesize);
             this.Controls.Add(this.version_lbl);
             this.Controls.Add(this.label_validTill2);
             this.Controls.Add(this.textbox_validTill);
@@ -201,8 +227,9 @@
             this.KeyPreview = true;
             this.Name = "PreferencesForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PreferencesForm_FormClosing);
-            this.Load += new System.EventHandler(this.PreferencesForm_Load);
+            this.Load += new System.EventHandler(this.OnLoad);
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_header)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackbar_minFilesize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +257,8 @@
         private System.Windows.Forms.TextBox textbox_maxDownloads;
         private System.Windows.Forms.Label label_maxDownloads;
         private System.Windows.Forms.Label version_lbl;
+        private System.Windows.Forms.TrackBar trackbar_minFilesize;
+        private System.Windows.Forms.Label label_filesize;
+        private System.Windows.Forms.Label lbl_filesize2;
     }
 }

@@ -29,7 +29,7 @@ namespace PowerFolder
 
         private void btn_register_Click(object sender, RibbonControlEventArgs e)
         {
-            Process.Start(Configuration.ConfigurationManager.GetInstance().GetConfig().BaseUrl + "/register");
+            Process.Start(Configuration.ConfigurationManager.GetInstance().GetBaseUrl() + "/register");
         }
 
         private void update_btn_Click(object sender, RibbonControlEventArgs e)

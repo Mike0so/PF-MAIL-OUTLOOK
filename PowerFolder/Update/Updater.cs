@@ -11,6 +11,9 @@ using Logger = PowerFolder.Logging.Log;
 
 namespace PowerFolder.Update
 {
+    /// <summary>
+    /// Needs to be implemented currently, currently a hack
+    /// </summary>
     public class Updater
     {
         const string _classname = "[Updater]";
@@ -68,7 +71,7 @@ namespace PowerFolder.Update
             }
             catch (Exception e)
             {
-                Logger.LogThis(string.Format("{0} {1} [Error while trying to check the version. Exception : {2}]", _classname, _methodname, e.Message), Logging.eloglevel.error);
+                Logger.LogThisError(e);
                 return;
             }
         }

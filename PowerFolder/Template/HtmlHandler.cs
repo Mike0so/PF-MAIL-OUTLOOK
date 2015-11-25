@@ -7,26 +7,30 @@ using System.Threading.Tasks;
 
 using Logger = PowerFolder.Logging.Log;
 
-namespace PowerFolder.Template
+namespace PowerFolder.Html
 {
     /// <summary>
     /// 
     /// </summary>
     public class HtmlHandler
     {
+        private string TEMP_FOLDER = Path.Combine(Path.GetTempPath(), "HtmlFiles");
+        private string TEMPLATE_FILE = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "AttachmentTemplate.html");
+
         /// <summary>
         /// True if an error occures in this instance
         /// </summary>
         public bool _innerError { get; private set; }
+
         /// <summary>
         /// List of file links from the MailItem
         /// </summary>
         private List<string> _fileLinks;
 
+        /// <summary>
+        /// Name of this class
+        /// </summary>
         private string _classname = "[HtmlHandler]";
-
-        private string TEMP_FOLDER = Path.Combine(Path.GetTempPath(), "HtmlFiles");
-        private string TEMPLATE_FILE = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "AttachmentTemplate.html");
 
         public HtmlHandler(List<string> fileLinks)
         {
@@ -41,7 +45,6 @@ namespace PowerFolder.Template
         /// <returns>True if the directory exists or it has been created successfuly otherwise false</returns>
         public bool CreateTempFolder()
         {
-            const string _methodname = "[CreateTempFolder]";
 
             if (!Directory.Exists(TEMP_FOLDER))
             {
@@ -52,10 +55,14 @@ namespace PowerFolder.Template
                 }
                 catch (IOException e)
                 {
-                    Logger.LogThis(string.Format("{0} {1} [Exception while creating the temp directory : {2}]", _classname, _methodname, e.Message), Logging.eloglevel.error);
+                    Logger.LogThisError(e);
                     return false;
                 }
-                
+                catch (Exception e)
+                {
+                    Logger.LogThisError(e);
+                    return false;
+                }
             }
             return true;
         }
@@ -68,7 +75,6 @@ namespace PowerFolder.Template
         {
             DirectoryInfo dirInfo = new DirectoryInfo(TEMP_FOLDER);
             FileInfo currentFile = null;
-            const string _methodname = "[ClearTempFolder]";
 
             try
             {
@@ -82,14 +88,19 @@ namespace PowerFolder.Template
             {
                 if (currentFile != null)
                 {
-                    Logger.LogThis(string.Format("{0} {1} [Exception while deleting file '{2}' : {3} ]", _classname, _methodname, currentFile.Name, e.Message), Logging.eloglevel.error);
+                    Logger.LogThisError(e);
                     return false;
                 }
                 else
                 {
-                    Logger.LogThis(string.Format("{0} {1} [Exception while clearing the temporary folder : {2}]", _classname, _methodname, e.Message), Logging.eloglevel.error);
+                    Logger.LogThisError(e);
                     return false;
                 }
+            }
+            catch (Exception e)
+            {
+                Logger.LogThisError(e);
+                return false;
             }
             return true;
         }
@@ -98,7 +109,7 @@ namespace PowerFolder.Template
         /// Creates a HTML File for every FileLink added to the current instance
         /// </summary>
         /// <returns>a List containing the paths for the created files</returns>
-        public List<string> CreateFiles()
+        public List<string> CreateHtmlFiles(string from, string to)
         {
             const string _methodname = "[CreateFiles]";
             List<string> filePaths = new List<string>();
@@ -124,7 +135,11 @@ namespace PowerFolder.Template
 
                     File.WriteAllText(Path.Combine(TEMP_FOLDER, fileName + ".html"), newHtmlFileContent
                         .Replace("$filename", fileName)
-                        .Replace("$filelink", fileLink));
+                        .Replace("$filelink", fileLink)
+                        .Replace("$from", from)
+                        .Replace("$to", to)
+                        //.Replace("$actualDate", DateTime.Now)
+                        );
 
                     filePaths.Add(Path.Combine(TEMP_FOLDER, fileName + ".html"));
                 }
@@ -132,9 +147,15 @@ namespace PowerFolder.Template
             }
             catch (IOException e)
             {
-                Logger.LogThis(string.Format("{0} {1} [Exception while reading the HtmlTemplate : {2}]", _classname, _methodname, e.Message), Logging.eloglevel.error);
+                Logger.LogThisError(e);
                 _innerError = true;
                 return null;               
+            }
+            catch (Exception e)
+            {
+                Logger.LogThisError(e);
+                _innerError = true;
+                return null;
             }
         } 
     }

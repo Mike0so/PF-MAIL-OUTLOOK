@@ -5,21 +5,33 @@ using System.Windows.Forms;
 using PowerFolder.Configuration;
 using PowerFolder.Http;
 using System.Diagnostics;
+using PowerFolder.Utils;
 
 namespace PowerFolder
 {
     public partial class PreferencesForm : Form
     {
+        /// <summary>
+        /// Delegate for coupled progressbar
+        /// </summary>
+        /// <param name="state">Enabled</param>
         delegate void HandleProgressBarDelegate(bool state);
 
-        private ConfigurationManager _config;
+        /// <summary>
+        /// Configuration instance
+        /// </summary>
+        private ConfigurationManager _configManager;
+
+        /// <summary>
+        /// Instance of this form
+        /// </summary>
         private static PreferencesForm _instance;
 
-        public PreferencesForm()
+        private PreferencesForm()
         {
             InitializeComponent();
 
-            _config = Configuration.ConfigurationManager.GetInstance();
+            _configManager = Configuration.ConfigurationManager.GetInstance();
 
             combobox_server_prefix.Items.Add("http://");
             combobox_server_prefix.Items.Add("https://");
@@ -27,6 +39,10 @@ namespace PowerFolder
             version_lbl.Text = string.Format("Version : {0}", System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString().Substring(0, 5));
         }
 
+        /// <summary>
+        /// Get the current running instance
+        /// </summary>
+        /// <returns></returns>
         public static PreferencesForm GetInstance()
         {
             if (_instance == null)
@@ -36,33 +52,40 @@ namespace PowerFolder
             return _instance;
         }
 
-        private void PreferencesForm_Load(object sender, EventArgs e)
+        private void OnLoad(object sender, EventArgs e)
         {
-            string[] seperator = new string[] { "://" };
-            string[] url = _config.GetConfig().BaseUrl
-                .Split(seperator, StringSplitOptions.RemoveEmptyEntries);
+            combobox_server_prefix.SelectedItem = _configManager.GetBaseUrlPrefix();
 
-            combobox_server_prefix.SelectedItem = string.Format("{0}://", url[0]);
+            textbox_server.Text = _configManager.GetBaseUrl();
+            textbox_username.Text = _configManager.GetUsername();
 
-            textbox_server.Text = url[1];
-            textbox_username.Text = _config.GetConfig().Username;
-
-            if (!string.IsNullOrEmpty(_config.GetConfig().Password))
+            if (!string.IsNullOrEmpty(_configManager.GetPassword()))
             {
-                textbox_password.Text = Security.SecurityManager.Decrypt(
-                    _config.GetConfig().Password);
+                textbox_password.Text = _configManager.GetPassword();
             }
 
-            textbox_maxDownloads.Text = _config.GetConfig().FileLinkDownloadCount;
-            textbox_validTill.Text = _config.GetConfig().FileLinkValidFor;
+            int defaultDownloads = _configManager.GetDefaultDownloads();
+            int defaultValidity = _configManager.GetDefaultValidity();
+
+            if (defaultDownloads > 0)
+            {
+                textbox_maxDownloads.Text = _configManager.GetDefaultDownloads().ToString();
+            }
+            if (defaultValidity > 0)
+            {
+                textbox_validTill.Text = _configManager.GetDefaultValidity().ToString();
+            }
+
+            trackbar_minFilesize.Value = int.Parse((_configManager.GetMinFileSize() / 1024).ToString());
+            lbl_filesize2.Text = PFUtils.FormatBytes(trackbar_minFilesize.Value * 1024);
         }
 
-        private void picturebox_header_Click(object sender, EventArgs e)
+        private void OnLogo_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("www.powerfolder.com");
         }
 
-        private void linklabel_pw_recovery_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void OnPasswordRecovery_Click(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if(string.IsNullOrEmpty(textbox_server.Text) ||
                 string.IsNullOrEmpty(textbox_username.Text))
@@ -87,61 +110,55 @@ namespace PowerFolder
             }
         }
 
-        private void btn_ok_Click(object sender, EventArgs e)
+        private void OnSave(object sender, EventArgs e)
         {
             HandleProgressBar(true);
 
             if (!ComponentsFilled())
             {
-                MessageBox.Show(Properties.Resources.config_empty, Properties.Resources.application_title);                
+                HandleProgressBar(false);
+                MessageBox.Show(Properties.Resources.config_empty, Properties.Resources.application_title);
                 return;
             }
 
-            _config.GetConfig().Username = textbox_username.Text;
-            _config.GetConfig().BaseUrl = string.Format("{0}{1}", combobox_server_prefix.SelectedItem, textbox_server.Text);
-            _config.GetConfig().Password = Security.SecurityManager.Encrypt(textbox_password.Text);
+            _configManager.SetUsername(textbox_username.Text);
+            _configManager.SetBaseURL(combobox_server_prefix.SelectedItem.ToString(), textbox_server.Text);
+            _configManager.SetPassword(textbox_password.Text);
 
-            int parser = 0;
+            string maxDownloads = textbox_maxDownloads.Text;
+            string validity = textbox_validTill.Text;
 
-            if (!string.IsNullOrEmpty(textbox_maxDownloads.Text))
+            try
             {
-                try
-                {
-                    parser = int.Parse(textbox_maxDownloads.Text);
-                }
-                catch (FormatException)
-                {
-                    MessageBox.Show("The maximum download count of a file link must be a number", Properties.Resources.application_title);
-                    return;
-                }
-                _config.GetConfig().FileLinkDownloadCount = textbox_maxDownloads.Text;
+                _configManager.SetDefaultDownloads(maxDownloads);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("The maximum download count of a file link must be a number", Properties.Resources.application_title);
+                return;
             }
 
-            if (!string.IsNullOrEmpty(textbox_validTill.Text)) {
-                try
-                {
-                    parser = int.Parse(textbox_validTill.Text);
-                }
-                catch (FormatException)
-                {
-                    MessageBox.Show("The validity of a file link must be a number", Properties.Resources.application_title);
-                    return;
-                }
-                _config.GetConfig().FileLinkValidFor = textbox_validTill.Text;
+            try
+            {
+                _configManager.SetDefaultDownloads(validity);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("The validity of a file link must be a number", Properties.Resources.application_title);
+                return;
             }
 
-            _config.SaveConfig(_config.GetConfig());
+            _configManager.SetMinFileSize((trackbar_minFilesize.Value * 1024).ToString());
+            _configManager.SaveConfig();
 
             PFApi apiCall = new PFApi();
 
-            if (!apiCall.CanAuthenticate())
+            if (!apiCall.TryToAuthenticate())
             {
                 HandleProgressBar(false);
                 MessageBox.Show(Properties.Resources.http_unauthorized, Properties.Resources.application_title);
                 return;
             }
-
-
             HandleProgressBar(false);
             this.Hide();
         }
@@ -167,6 +184,11 @@ namespace PowerFolder
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void trackbar_filesize_ValueChanged(object sender, EventArgs e)
+        {
+            lbl_filesize2.Text = PFUtils.FormatBytes(trackbar_minFilesize.Value * 1024);
         }
     }
 }

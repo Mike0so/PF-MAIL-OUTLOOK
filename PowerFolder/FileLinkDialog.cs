@@ -8,22 +8,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using Config = PowerFolder.Configuration.ConfigurationManager;
+using _configManager = PowerFolder.Configuration.ConfigurationManager;
 using Logger = PowerFolder.Logging.Log;
 
 namespace PowerFolder
 {
-
+    /// <summary>
+    /// This form is used to configure parameters for file link generation.
+    /// </summary>
     public partial class FileLinkDialog : Form
     {
-        private static FileLinkDialog _instance;
-
+        /// <summary>
+        /// Name of this class
+        /// </summary>
         private const string _classname = "[FileLinkDialog]";
 
+        /// <summary>
+        /// Little hack
+        /// </summary>
         public bool _canceled { get; private set; }
 
-        public Dictionary<string, string> linkParams;
+        /// <summary>
+        /// Current running instance
+        /// </summary>
+        private static FileLinkDialog _instance;
 
+        /// <summary>
+        /// Container holding all entered options to generate FileLinks
+        /// </summary>
+        public Dictionary<string, string> linkParams;
 
         private FileLinkDialog()
         {
@@ -34,7 +47,7 @@ namespace PowerFolder
 
 
         #region Listener
-        private void btn_ok_Click(object sender, EventArgs e)
+        private void OnSave_Click(object sender, EventArgs e)
         {
             _canceled = false;
             const string _methodname = "[btn_ok_Click]";
@@ -43,7 +56,7 @@ namespace PowerFolder
             {
                 if (Utils.PFUtils.TryToParseInteger(textbox_maxDownloads.Text))
                 {
-                    SetFileLinkParam(FileLinkContraints.MAX_DOWNLOAD, textbox_maxDownloads.Text);
+                    SetFileLinkParameter(FileLinkContraints.MAX_DOWNLOAD, textbox_maxDownloads.Text);
                 }
                 else
                 {
@@ -54,14 +67,14 @@ namespace PowerFolder
 
             if (!string.IsNullOrEmpty(textbox_password.Text))
             {
-                SetFileLinkParam(FileLinkContraints.PASSWORD, textbox_password.Text);
+                SetFileLinkParameter(FileLinkContraints.PASSWORD, textbox_password.Text);
             }
 
             if (!string.IsNullOrEmpty(textbox_validTill.Text))
             {
                 if (Utils.PFUtils.TryToParseInteger(textbox_validTill.Text))
                 {
-                    SetFileLinkParam(FileLinkContraints.VALIDITY, textbox_validTill.Text);
+                    SetFileLinkParameter(FileLinkContraints.VALIDITY, textbox_validTill.Text);
                 }
                 else
                 {
@@ -79,8 +92,8 @@ namespace PowerFolder
 
             if (checkbox_dont_ask.Checked)
             {
-                Config.GetInstance().GetConfig().FileLinkDialogEachEmail = false;
-                Config.GetInstance().SaveConfig(Config.GetInstance().GetConfig());
+                _configManager.GetInstance().SetShowFileLinkDialog(false);
+                _configManager.GetInstance().SaveConfig();
             }
 
             ClearControls();
@@ -89,7 +102,7 @@ namespace PowerFolder
             this.Hide();
         }
 
-        private void btn_cancel_Click(object sender, EventArgs e)
+        private void OnCancel_Click(object sender, EventArgs e)
         {
             _canceled = true;
 
@@ -99,7 +112,7 @@ namespace PowerFolder
             this.Hide();
         }
 
-        private void FileLinkDialog_FormClosing(object sender, FormClosingEventArgs e)
+        private void OnForm_Closing(object sender, FormClosingEventArgs e)
         {
             _canceled = true;
 
@@ -108,20 +121,30 @@ namespace PowerFolder
             this.Hide();
         }
 
-        private void FileLinkDialog_Load(object sender, EventArgs e)
+        private void OnForm_Loading(object sender, EventArgs e)
         {
-            Configuration.Configuration config = Config.GetInstance().GetConfig();
-
             /* Add default values to file link dialog */
-            if (config.GetDefaultValues().Count > 0)
+            if (_configManager.GetInstance().GetFileLinkDefaultValues().Count > 0)
             {
-                if (!string.IsNullOrEmpty(config.FileLinkValidFor))
+                try
                 {
-                    textbox_validTill.Text = config.FileLinkValidFor;
+                    if (_configManager.GetInstance().GetDefaultValidity() > 0)
+                    {
+                        textbox_validTill.Text = _configManager.GetInstance().GetDefaultValidity().ToString();
+                    }
+                    if (_configManager.GetInstance().GetDefaultDownloads() > 0)
+                    {
+                        textbox_maxDownloads.Text = _configManager.GetInstance().GetDefaultDownloads().ToString();
+                    }
                 }
-                if (!string.IsNullOrEmpty(config.FileLinkDownloadCount))
+                catch (FormatException)
                 {
-                    textbox_maxDownloads.Text = config.FileLinkDownloadCount;
+                    textbox_maxDownloads.Text = string.Empty;
+                    textbox_validTill.Text = string.Empty;
+                }
+                catch (Exception e1)
+                {
+                    Logger.LogThisError(e1);
                 }
             }
         }
@@ -133,7 +156,7 @@ namespace PowerFolder
         /// </summary>
         /// <param name="constrait">The file link parameter</param>
         /// <param name="value">The value to be add</param>
-        public void SetFileLinkParam(string fileLinkContraint, string value)
+        public void SetFileLinkParameter(string fileLinkContraint, string value)
         {
             switch (fileLinkContraint)
             {
@@ -163,7 +186,7 @@ namespace PowerFolder
             }
         }
 
-        public Dictionary<string, string> GetFileLinkParams(bool clearDictionary = false)
+        public Dictionary<string, string> GetFileLinkParameters(bool clearDictionary = false)
         {
             Dictionary<string, string> paramters = new Dictionary<string, string>();
 
@@ -179,9 +202,11 @@ namespace PowerFolder
             return paramters;
         }
 
+        /// <summary>
+        /// Clears the input of all <para>TextBox</para> controls
+        /// </summary>
         public void ClearControls()
         {
-            const string _methodname = "[ClearControls]";
             try
             {
                 foreach (TextBox txtBox in this.Controls.OfType<TextBox>())
@@ -194,10 +219,14 @@ namespace PowerFolder
                 textbox_maxDownloads.Text = string.Empty;
                 textbox_password.Text = string.Empty;
                 textbox_validTill.Text = string.Empty;
-                Logger.LogThis(string.Format("{0} {1} [Exception : {2}]", _classname, _methodname, e.Message), Logging.eloglevel.error);                
+                Logger.LogThisError(e);                
             }
         }
 
+        /// <summary>
+        /// Get the current instance
+        /// </summary>
+        /// <returns>Instance of FileLinkDialog</returns>
         public static FileLinkDialog GetInstance()
         {
             if (_instance == null)
@@ -206,7 +235,6 @@ namespace PowerFolder
             }
             return _instance;
         }
-
     }
 
     public static class FileLinkContraints
